@@ -5,6 +5,9 @@
  */
 package ViewsNonAdmin;
 
+import javax.swing.UIManager;
+import com.jtattoo.plaf.smart.*;
+
 /**
  *
  * @author LopezLaps
@@ -15,7 +18,7 @@ public class Customer extends javax.swing.JFrame {
      * Creates new form Customer
      */
     public Customer() {
-        Themes.Theme.render("Windows");
+        Themes.Theme.renderAluminium(Customer.class.getName());
         initComponents();
     }
 
@@ -80,7 +83,6 @@ public class Customer extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 3, 18)); // NOI18N
@@ -257,7 +259,7 @@ public class Customer extends javax.swing.JFrame {
         jButton1.setText("SAVE");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 660, -1, -1));
 
-        setSize(new java.awt.Dimension(758, 694));
+        setSize(new java.awt.Dimension(774, 733));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -274,22 +276,9 @@ public class Customer extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */

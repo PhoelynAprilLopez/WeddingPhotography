@@ -71,7 +71,7 @@ public final class SplashScreen extends javax.swing.JFrame {
      * Creates new form SplashScreen
      */
     public SplashScreen() {
-        Themes.Theme.render("Windows Classic");
+        Themes.Theme.renderAluminium(SplashScreen.class.getName());
         initComponents();
         progressBarInitProperties();
         splashInit();
@@ -96,12 +96,13 @@ public final class SplashScreen extends javax.swing.JFrame {
 
         loadingBar.setForeground(java.awt.Color.pink);
         loadingBar.setAlignmentX(0.0F);
-        loadingBar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        loadingBar.setAlignmentY(0.0F);
+        loadingBar.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         loadingBar.setBorderPainted(false);
         loadingBar.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         loadingBar.setString("");
         loadingBar.setStringPainted(true);
-        getContentPane().add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 270, 430, 10));
+        getContentPane().add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 250, 430, 10));
 
         setSize(new java.awt.Dimension(410, 300));
         setLocationRelativeTo(null);
@@ -116,22 +117,9 @@ public final class SplashScreen extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */

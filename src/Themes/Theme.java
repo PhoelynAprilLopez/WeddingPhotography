@@ -5,11 +5,22 @@
  */
 package Themes;
 
+import Views.SplashScreen;
+import javax.swing.UIManager;
+
 /**
  *
  * @author LopezLaps
  */
 public class Theme {
+    
+    public static void renderAluminium(String className) {
+        try {
+            UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(className).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }
     
     public static void render(String themeName) {
         try {
