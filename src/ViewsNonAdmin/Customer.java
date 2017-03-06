@@ -15,6 +15,7 @@ public class Customer extends javax.swing.JFrame {
      * Creates new form Customer
      */
     public Customer() {
+        Themes.Theme.render("Windows");
         initComponents();
     }
 
@@ -98,34 +99,40 @@ public class Customer extends javax.swing.JFrame {
         jLabel5.setText("Address :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 200, -1));
 
         jTextField2.setText("jTextField2");
+        jTextField2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 200, -1));
 
         jTextField3.setText("jTextField3");
+        jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 200, -1));
 
         jTextField4.setText("jTextField4");
+        jTextField4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 200, -1));
 
         jLabel6.setText("City :");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
 
         jTextField5.setText("jTextField5");
+        jTextField5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 200, -1));
 
         jLabel7.setText("Postal Code :");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 70, -1));
 
         jTextField6.setText("jTextField6");
+        jTextField6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 200, -1));
 
         jLabel8.setText("Contact Number :");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 90, -1));
 
         jTextField7.setText("jTextField7");
+        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 200, -1));
 
         jLabel9.setText("PHOTOGRAPHY  COVERAGE :");
@@ -150,12 +157,15 @@ public class Customer extends javax.swing.JFrame {
 
         jLabel10.setText("Time :");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+
+        jDateChooser1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 610, 140, -1));
 
         jLabel11.setText("Location :");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, -1, -1));
 
         jTextField8.setText("jTextField8");
+        jTextField8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, -1, -1));
 
         jLabel12.setText("Time :");
@@ -171,30 +181,37 @@ public class Customer extends javax.swing.JFrame {
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, -1));
 
         jTextField9.setText("jTextField8");
+        jTextField9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, -1, -1));
 
         jLabel16.setText("Location :");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
         jTextField10.setText("jTextField8");
+        jTextField10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
 
         jLabel17.setText("Location :");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, -1, -1));
 
         jTextField11.setText("jTextField8");
+        jTextField11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, -1, -1));
 
         jTextField12.setText("jTextField12");
+        jTextField12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
 
         jTextField13.setText("jTextField12");
+        jTextField13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, -1));
 
         jTextField14.setText("jTextField12");
+        jTextField14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
 
         jTextField15.setText("jTextField12");
+        jTextField15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
 
         jLabel18.setText("DEPOSIT :");
@@ -210,6 +227,7 @@ public class Customer extends javax.swing.JFrame {
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 420, 90, -1));
 
         jTextField16.setText("jTextField16");
+        jTextField16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 420, 70, -1));
 
         jLabel22.setText("Special / Request / Notes :");
@@ -217,6 +235,7 @@ public class Customer extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 540, 70));
@@ -225,12 +244,14 @@ public class Customer extends javax.swing.JFrame {
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 610, -1, -1));
 
         jTextField17.setText("jTextField17");
+        jTextField17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, 100, -1));
 
         jLabel24.setText("Full Payment :");
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, -1, -1));
 
         jTextField18.setText("jTextField18");
+        jTextField18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, 80, -1));
 
         jButton1.setText("SAVE");
