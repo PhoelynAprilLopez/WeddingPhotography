@@ -6,6 +6,7 @@
 package Views;
 
 import ViewsAdmin.Login;
+import ViewsNonAdmin.Customer;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -42,7 +43,7 @@ public final class SplashScreen extends javax.swing.JFrame {
                 for (;;) {
                     if (xa >= 100) {
 
-                        new Login().setVisible(true);
+                        new Customer().setVisible(true);
                         frameClose();
                         prog.stop();
                     } else {
