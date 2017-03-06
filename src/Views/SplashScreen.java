@@ -43,8 +43,8 @@ public final class SplashScreen extends javax.swing.JFrame {
                 for (;;) {
                     if (xa >= 100) {
 
-                        new Customer().setVisible(true);
-                        frameClose();
+                        new Home().setVisible(true);
+                        dispose();
                         prog.stop();
                     } else {
                         xa = xa + 1;
