@@ -60,38 +60,30 @@ public class Home extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(500, 300));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBookNow.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnBookNow.setText("Book Now!");
+        btnBookNow.setMargin(new java.awt.Insets(14, 14, 14, 14));
         btnBookNow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBookNowActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBookNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
 
+        jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jMenu3.setBackground(new java.awt.Color(153, 153, 153));
         jMenu3.setText("Admin");
+        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu3);
 
         jMenu4.setText("Terms and condition");
+        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(btnBookNow)
-                .addContainerGap(288, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(btnBookNow)
-                .addContainerGap(173, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

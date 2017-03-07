@@ -54,7 +54,9 @@ public class WeddingDetails extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WEDDING DETAILS");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -80,7 +82,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField5, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Date of Wedding :");
+        jLabel10.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel10.setText("Booker Name:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -90,6 +93,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jLabel10, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Date of Wedding :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -113,7 +117,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField6, gridBagConstraints);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setText("Date of Wedding :");
+        jLabel16.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel16.setText("Full Name of the Bride:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -136,7 +141,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField7, gridBagConstraints);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setText("Date of Wedding :");
+        jLabel17.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel17.setText("Full Name of the Groom:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -159,7 +165,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField12, gridBagConstraints);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Date of Wedding :");
+        jLabel18.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel18.setText("Address:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
@@ -182,7 +189,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField13, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel19.setText("Date of Wedding :");
+        jLabel19.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel19.setText("City:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
@@ -218,7 +226,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField15, gridBagConstraints);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel20.setText("Date of Wedding :");
+        jLabel20.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel20.setText("Contact Number:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
@@ -241,7 +250,8 @@ public class WeddingDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField16, gridBagConstraints);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel21.setText("Date of Wedding :");
+        jLabel21.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel21.setText("Postal Code:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
