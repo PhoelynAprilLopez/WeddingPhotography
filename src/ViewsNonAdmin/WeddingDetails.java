@@ -20,7 +20,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(WeddingDetails.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -31,7 +31,6 @@ public class WeddingDetails extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
@@ -54,231 +53,108 @@ public class WeddingDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WEDDING DETAILS");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 740;
-        gridBagConstraints.ipady = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        getContentPane().add(jLabel1, gridBagConstraints);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 977, 50));
 
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField5.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField5, gridBagConstraints);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 93, 407, 34));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 0, 153));
         jLabel10.setText("Booker Name:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 286, 0, 0);
-        getContentPane().add(jLabel10, gridBagConstraints);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 70, 120, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Date of Wedding :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel15, gridBagConstraints);
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 145, 145, -1));
 
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField6.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField6, gridBagConstraints);
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 168, 407, 34));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 153));
         jLabel16.setText("Full Name of the Bride:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel16, gridBagConstraints);
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 220, 178, -1));
 
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField7.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField7, gridBagConstraints);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 243, 407, 34));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 0, 153));
         jLabel17.setText("Full Name of the Groom:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel17, gridBagConstraints);
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 295, 189, -1));
 
         jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField12.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField12, gridBagConstraints);
+        getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 318, 407, 34));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 153));
         jLabel18.setText("Address:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel18, gridBagConstraints);
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 370, 82, -1));
 
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField13.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField13, gridBagConstraints);
+        getContentPane().add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 393, 407, 34));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 153));
         jLabel19.setText("City:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel19, gridBagConstraints);
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 445, 53, -1));
 
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField14.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField14, gridBagConstraints);
+        getContentPane().add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 468, 407, 34));
 
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField15.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField15, gridBagConstraints);
+        getContentPane().add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 543, 407, 34));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 153));
         jLabel20.setText("Contact Number:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel20, gridBagConstraints);
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 520, 141, -1));
 
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTextField16.setPreferredSize(new java.awt.Dimension(5, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 402;
-        gridBagConstraints.ipady = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 286, 0, 0);
-        getContentPane().add(jTextField16, gridBagConstraints);
+        getContentPane().add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 618, 407, 34));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 0, 153));
         jLabel21.setText("Postal Code:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 15;
-        gridBagConstraints.ipadx = 21;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 286, 0, 0);
-        getContentPane().add(jLabel21, gridBagConstraints);
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 595, 108, -1));
 
+        jButton2.setBackground(new java.awt.Color(255, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Next");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.ipadx = 101;
-        gridBagConstraints.ipady = 18;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(34, 19, 24, 0);
-        getContentPane().add(jButton2, gridBagConstraints);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 160, 41));
 
-        pack();
+        setSize(new java.awt.Dimension(885, 629));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

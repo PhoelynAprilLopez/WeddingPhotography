@@ -19,7 +19,7 @@ public class Customer extends javax.swing.JFrame {
      */
     public Customer() {
         Themes.Theme.renderAluminium(Customer.class.getName());
-        //Themes.Theme.setIcon(this);
+        Themes.Theme.setIcon(this);
         initComponents();
     }
 
