@@ -53,6 +53,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
@@ -107,10 +108,16 @@ public class Home extends javax.swing.JFrame {
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jMenu3.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu3.setText("Admin");
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jMenu3.setText("Home");
         jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu3);
+
+        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
+        jMenu5.setText("Admin");
+        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu5);
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
@@ -158,6 +165,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;

@@ -52,9 +52,6 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -65,7 +62,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("WEDDING DETAILS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 977, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -77,6 +74,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel21.setText("Postal Code:");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 595, 108, -1));
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -132,13 +130,13 @@ public class WeddingDetails extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("New");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 160, 41));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 160, 41));
 
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -174,24 +172,9 @@ public class WeddingDetails extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 160, 41));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 160, 41));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 810, 510));
-
-        jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jMenu3.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu3.setText("Admin");
-        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu3);
-
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms and condition");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu4);
-
-        setJMenuBar(jMenuBar2);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 810, 440));
 
         setSize(new java.awt.Dimension(885, 629));
         setLocationRelativeTo(null);
@@ -241,9 +224,6 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
