@@ -72,6 +72,7 @@ public final class SplashScreen extends javax.swing.JFrame {
      */
     public SplashScreen() {
         Themes.Theme.renderAluminium(SplashScreen.class.getName());
+        Themes.Theme.setIcon(this);
         initComponents();
         progressBarInitProperties();
         splashInit();

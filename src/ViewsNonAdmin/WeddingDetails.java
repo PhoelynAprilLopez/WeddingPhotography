@@ -17,6 +17,8 @@ public class WeddingDetails extends javax.swing.JFrame {
      * Creates new form WeddingDetails
      */
     public WeddingDetails() {
+        Themes.Theme.renderAluminium(WeddingDetails.class.getName());
+        Themes.Theme.setIcon(this);
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }

@@ -15,6 +15,8 @@ public class OtherInfo extends javax.swing.JFrame {
      * Creates new form OtherInfo
      */
     public OtherInfo() {
+        Themes.Theme.renderAluminium(OtherInfo.class.getName());
+        Themes.Theme.setIcon(this);
         initComponents();
     }
 

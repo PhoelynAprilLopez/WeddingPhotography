@@ -5,8 +5,6 @@
  */
 package Views;
 
-import ViewsNonAdmin.OtherInfo;
-import ViewsNonAdmin.WeddingDetails;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -22,9 +20,11 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         Themes.Theme.renderAluminium(Home.class.getName());
+        Themes.Theme.setIcon(this);
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);   
     }
+    
     
     public void frameClose() {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -57,12 +57,13 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 300));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBookNow.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnBookNow.setBackground(new java.awt.Color(255, 0, 153));
+        btnBookNow.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnBookNow.setForeground(new java.awt.Color(255, 255, 255));
         btnBookNow.setText("Book Now!");
         btnBookNow.setMargin(new java.awt.Insets(14, 14, 14, 14));
         btnBookNow.addActionListener(new java.awt.event.ActionListener() {
@@ -70,15 +71,17 @@ public class Home extends javax.swing.JFrame {
                 btnBookNowActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBookNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
+        getContentPane().add(btnBookNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 170, 60));
 
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jMenu3.setBackground(new java.awt.Color(153, 153, 153));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon.png"))); // NOI18N
         jMenu3.setText("Admin");
         jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Phoelyn April\\Final Java\\Images\\tac.png")); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu4);

@@ -15,6 +15,8 @@ public class PhotoCoverage extends javax.swing.JFrame {
      * Creates new form PhotoCoverage
      */
     public PhotoCoverage() {
+        Themes.Theme.renderAluminium(PhotoCoverage.class.getName());
+        Themes.Theme.setIcon(this);
         initComponents();
     }
 

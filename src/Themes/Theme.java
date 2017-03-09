@@ -6,6 +6,8 @@
 package Themes;
 
 import Views.SplashScreen;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
@@ -39,5 +41,9 @@ public class Theme {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(themeName + " Theme Unsupported Look and feel Exception").log(java.util.logging.Level.SEVERE, null, ex);
         }
+    }
+    
+    public static void setIcon(JFrame jframe){
+        jframe.setIconImage(Toolkit.getDefaultToolkit().getImage(jframe.getClass().getResource("/Images/icon.png")));
     }
 }
