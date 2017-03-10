@@ -37,21 +37,21 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txt_bookername = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txt_dateofwedding = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txt_fullnameofbride = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        txt_fullnameofgroom = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTextField13 = new javax.swing.JTextField();
+        btn_wdcancel = new javax.swing.JButton();
+        txt_address = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        txt_city = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        txt_contactnumber = new javax.swing.JTextField();
+        btn_wdnext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,6 +61,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BAG.png"))); // NOI18N
         jLabel1.setText("WEDDING DETAILS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
@@ -82,97 +83,97 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel10.setText("Booker Name:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
 
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField5.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 270, 34));
+        txt_bookername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_bookername.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_bookername.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_bookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 270, 34));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Date of Wedding :");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 130, -1));
 
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField6.setPreferredSize(new java.awt.Dimension(5, 18));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txt_dateofwedding.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_dateofwedding.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_dateofwedding.setPreferredSize(new java.awt.Dimension(5, 18));
+        txt_dateofwedding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txt_dateofweddingActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 250, 34));
+        jPanel1.add(txt_dateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 250, 34));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 153));
         jLabel16.setText("Full Name of the Bride:");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 170, -1));
 
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField7.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 350, 34));
+        txt_fullnameofbride.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_fullnameofbride.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_fullnameofbride.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_fullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 350, 34));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 0, 153));
         jLabel17.setText("Full Name of the Groom:");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 170, -1));
 
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField12.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 350, 34));
+        txt_fullnameofgroom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_fullnameofgroom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_fullnameofgroom.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_fullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 350, 34));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 153));
         jLabel18.setText("Address:");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 70, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_wdcancel.setBackground(new java.awt.Color(255, 0, 153));
+        btn_wdcancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn_wdcancel.setForeground(new java.awt.Color(255, 255, 255));
+        btn_wdcancel.setText("Cancel");
+        btn_wdcancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_wdcancelActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 160, 41));
+        jPanel1.add(btn_wdcancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 160, 41));
 
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField13.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 350, 34));
+        txt_address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_address.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_address.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 350, 34));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 153));
         jLabel19.setText("City:");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 53, -1));
 
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField14.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 350, 34));
+        txt_city.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_city.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_city.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_city, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 350, 34));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 153));
         jLabel20.setText("Contact Number:");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, -1));
 
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTextField15.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 350, 34));
+        txt_contactnumber.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_contactnumber.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_contactnumber.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_contactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 350, 34));
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Next");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_wdnext.setBackground(new java.awt.Color(255, 0, 153));
+        btn_wdnext.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn_wdnext.setForeground(new java.awt.Color(255, 255, 255));
+        btn_wdnext.setText("Next");
+        btn_wdnext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_wdnextActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 160, 41));
+        jPanel1.add(btn_wdnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 160, 41));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 810, 440));
 
@@ -180,17 +181,19 @@ public class WeddingDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_wdcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdcancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_wdcancelActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txt_dateofweddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dateofweddingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txt_dateofweddingActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
+        new ViewsNonAdmin.PhotoCoverage().setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_btn_wdnextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,8 +216,8 @@ public class WeddingDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btn_wdcancel;
+    private javax.swing.JButton btn_wdnext;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
@@ -225,13 +228,13 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txt_address;
+    private javax.swing.JTextField txt_bookername;
+    private javax.swing.JTextField txt_city;
+    private javax.swing.JTextField txt_contactnumber;
+    private javax.swing.JTextField txt_dateofwedding;
+    private javax.swing.JTextField txt_fullnameofbride;
+    private javax.swing.JTextField txt_fullnameofgroom;
     // End of variables declaration//GEN-END:variables
 }

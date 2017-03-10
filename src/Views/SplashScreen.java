@@ -108,8 +108,8 @@ public final class SplashScreen extends javax.swing.JFrame {
         loadingBar.setStringPainted(true);
         getContentPane().add(loadingBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 270, 430, 10));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Phoelyn April\\Final Java\\Images\\bw.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 300));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bw.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 320));
 
         setSize(new java.awt.Dimension(410, 300));
         setLocationRelativeTo(null);

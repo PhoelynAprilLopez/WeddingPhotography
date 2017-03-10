@@ -29,21 +29,176 @@ public class PhotoCoverage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        txt_gettingreadytime = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txt_gettingreadylocation = new javax.swing.JTextField();
+        btn_pcnext = new javax.swing.JButton();
+        chck_gettingready = new javax.swing.JCheckBox();
+        chck_ceremony = new javax.swing.JCheckBox();
+        jLabel21 = new javax.swing.JLabel();
+        txt_ceremonytime = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        txt_ceremonylocation = new javax.swing.JTextField();
+        chck_photoshoot = new javax.swing.JCheckBox();
+        jLabel23 = new javax.swing.JLabel();
+        txt_photoshoottime = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txt_photoshootlocation = new javax.swing.JTextField();
+        chck_reception = new javax.swing.JCheckBox();
+        jLabel25 = new javax.swing.JLabel();
+        txt_receptiontime = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txt_receptionlocation = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(870, 652));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PHOTOGRAPHY COVERAGE");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
-        pack();
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel15.setText("Time:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, -1));
+
+        txt_gettingreadytime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_gettingreadytime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_gettingreadytime.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_gettingreadytime, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 60, 34));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel16.setText("Location:");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 70, -1));
+
+        txt_gettingreadylocation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_gettingreadylocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_gettingreadylocation.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_gettingreadylocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 330, 34));
+
+        btn_pcnext.setBackground(new java.awt.Color(255, 0, 153));
+        btn_pcnext.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn_pcnext.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pcnext.setText("Next");
+        btn_pcnext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pcnextActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_pcnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 160, 41));
+
+        chck_gettingready.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chck_gettingready.setForeground(new java.awt.Color(255, 0, 153));
+        chck_gettingready.setText("Getting Ready");
+        jPanel1.add(chck_gettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 30));
+
+        chck_ceremony.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chck_ceremony.setForeground(new java.awt.Color(255, 0, 153));
+        chck_ceremony.setText("Ceremony");
+        chck_ceremony.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chck_ceremonyActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chck_ceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 30));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel21.setText("Time:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 50, -1));
+
+        txt_ceremonytime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ceremonytime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_ceremonytime.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_ceremonytime, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 60, 34));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel22.setText("Location:");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 70, -1));
+
+        txt_ceremonylocation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_ceremonylocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_ceremonylocation.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_ceremonylocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 330, 34));
+
+        chck_photoshoot.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chck_photoshoot.setForeground(new java.awt.Color(255, 0, 153));
+        chck_photoshoot.setText("Photoshoot");
+        jPanel1.add(chck_photoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 30));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel23.setText("Time:");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, -1));
+
+        txt_photoshoottime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_photoshoottime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_photoshoottime.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_photoshoottime, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 60, 34));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel24.setText("Location:");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 70, -1));
+
+        txt_photoshootlocation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_photoshootlocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_photoshootlocation.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_photoshootlocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 330, 34));
+
+        chck_reception.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        chck_reception.setForeground(new java.awt.Color(255, 0, 153));
+        chck_reception.setText("Reception");
+        jPanel1.add(chck_reception, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 30));
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel25.setText("Time:");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 50, -1));
+
+        txt_receptiontime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_receptiontime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_receptiontime.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_receptiontime, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 60, 34));
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel26.setText("Location:");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 70, -1));
+
+        txt_receptionlocation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_receptionlocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_receptionlocation.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_receptionlocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 330, 34));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 810, 440));
+
+        setSize(new java.awt.Dimension(885, 580));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
+        new ViewsNonAdmin.OtherInfo().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_pcnextActionPerformed
+
+    private void chck_ceremonyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chck_ceremonyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chck_ceremonyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +236,28 @@ public class PhotoCoverage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_pcnext;
+    private javax.swing.JCheckBox chck_ceremony;
+    private javax.swing.JCheckBox chck_gettingready;
+    private javax.swing.JCheckBox chck_photoshoot;
+    private javax.swing.JCheckBox chck_reception;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_ceremonylocation;
+    private javax.swing.JTextField txt_ceremonytime;
+    private javax.swing.JTextField txt_gettingreadylocation;
+    private javax.swing.JTextField txt_gettingreadytime;
+    private javax.swing.JTextField txt_photoshootlocation;
+    private javax.swing.JTextField txt_photoshoottime;
+    private javax.swing.JTextField txt_receptionlocation;
+    private javax.swing.JTextField txt_receptiontime;
     // End of variables declaration//GEN-END:variables
 }

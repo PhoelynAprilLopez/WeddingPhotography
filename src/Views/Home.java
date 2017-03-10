@@ -65,7 +65,6 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 300));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,7 +101,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Edwardian Script ITC", 3, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/arrow.png_48x48.png"))); // NOI18N
-        jLabel3.setText("Picture Sample Below ");
+        jLabel3.setText("Sample Picture");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 460, 60));
 
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

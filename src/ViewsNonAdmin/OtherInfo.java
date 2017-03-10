@@ -29,21 +29,73 @@ public class OtherInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        txt_numberofguest = new javax.swing.JTextField();
+        btn_oidone = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_specialrequestnotes = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(870, 652));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("OTHER INFORMATION");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
-        pack();
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel16.setText("Number of Guest :");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 130, -1));
+
+        txt_numberofguest.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_numberofguest.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txt_numberofguest.setPreferredSize(new java.awt.Dimension(5, 18));
+        jPanel1.add(txt_numberofguest, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 110, 34));
+
+        btn_oidone.setBackground(new java.awt.Color(255, 0, 153));
+        btn_oidone.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn_oidone.setForeground(new java.awt.Color(255, 255, 255));
+        btn_oidone.setText("Done");
+        btn_oidone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_oidoneActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_oidone, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 160, 41));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel22.setText("Special/Request/Notes :");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, -1));
+
+        ta_specialrequestnotes.setColumns(20);
+        ta_specialrequestnotes.setRows(5);
+        jScrollPane1.setViewportView(ta_specialrequestnotes);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 620, 230));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 810, 440));
+
+        setSize(new java.awt.Dimension(870, 609));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
+        new ViewsNonAdmin.OtherInfo().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_oidoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +133,13 @@ public class OtherInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_oidone;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea ta_specialrequestnotes;
+    private javax.swing.JTextField txt_numberofguest;
     // End of variables declaration//GEN-END:variables
 }
