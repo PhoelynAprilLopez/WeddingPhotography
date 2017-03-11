@@ -32,55 +32,55 @@ public class Reports extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txt_search = new javax.swing.JTextField();
+        btn_go = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_rwdbookername = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txt_rwddateofwedding = new javax.swing.JTextField();
+        txt_rwdfullnameofbride = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txt_rwdfullnameofgroom = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txt_rwdaddress = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txt_rwdcity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txt_rwdcontactnumber = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        txt_rpclocationgettingready = new javax.swing.JTextField();
+        txt_rpclocationceremony = new javax.swing.JTextField();
+        txt_rpclocationphotoshoot = new javax.swing.JTextField();
+        txt_rpclocationreception = new javax.swing.JTextField();
+        txt_rpctimegettingready = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        txt_rpctimeceremony = new javax.swing.JTextField();
+        txt_rpctimephotoshoot = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        txt_rpctimereception = new javax.swing.JTextField();
+        chck_rpcgettingready = new javax.swing.JCheckBox();
+        chck_rpcceremony = new javax.swing.JCheckBox();
+        chck_rpcphotoshoot = new javax.swing.JCheckBox();
+        chck_rpcreception = new javax.swing.JCheckBox();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
+        txt_roinumberofguest = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ta_roispecialrequestnotes = new javax.swing.JTextArea();
+        btn_rpayment = new javax.swing.JButton();
+        btn_rupdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(840, 520));
@@ -105,13 +105,13 @@ public class Reports extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Search");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 210, 30));
+        getContentPane().add(txt_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 210, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("GO");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 50, 30));
+        btn_go.setBackground(new java.awt.Color(255, 0, 153));
+        btn_go.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btn_go.setForeground(new java.awt.Color(255, 255, 255));
+        btn_go.setText("GO");
+        getContentPane().add(btn_go, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 50, 30));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,38 +125,38 @@ public class Reports extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setText("BOOKER NAME:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 90, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 30));
+        jPanel1.add(txt_rwdbookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 153));
         jLabel4.setText("DATE OF WEDDING:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 130, 30));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 30));
+        jPanel1.add(txt_rwddateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 130, 30));
+        jPanel1.add(txt_rwdfullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 153));
         jLabel5.setText("FULL NAME OF THE BRIDE:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 144, 170, 20));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 130, 30));
+        jPanel1.add(txt_rwdfullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 130, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 153));
         jLabel6.setText("FULL NAME OF THE GROOM:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 170, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 30));
+        jPanel1.add(txt_rwdaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 153));
         jLabel7.setText("ADDRESS:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 70, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 30));
+        jPanel1.add(txt_rwdcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 153));
         jLabel8.setText("CITY:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 50, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 130, 30));
+        jPanel1.add(txt_rwdcontactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 0, 153));
@@ -177,24 +177,24 @@ public class Reports extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 0, 153));
         jLabel11.setText("Location:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
-        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 30));
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 130, 30));
-        jPanel2.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 130, 30));
+        jPanel2.add(txt_rpclocationgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 30));
+        jPanel2.add(txt_rpclocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
+        jPanel2.add(txt_rpclocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 130, 30));
+        jPanel2.add(txt_rpclocationreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 130, 30));
 
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        txt_rpctimegettingready.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                txt_rpctimegettingreadyActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 30));
+        jPanel2.add(txt_rpctimegettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Time:");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 30));
-        jPanel2.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 50, 30));
+        jPanel2.add(txt_rpctimeceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 30));
+        jPanel2.add(txt_rpctimephotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 50, 30));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 0, 153));
@@ -210,27 +210,27 @@ public class Reports extends javax.swing.JFrame {
         jLabel36.setForeground(new java.awt.Color(255, 0, 153));
         jLabel36.setText("Location:");
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
-        jPanel2.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 50, 30));
+        jPanel2.add(txt_rpctimereception, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 50, 30));
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 0, 153));
-        jCheckBox1.setText("Getting Ready");
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 63, -1, 30));
+        chck_rpcgettingready.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        chck_rpcgettingready.setForeground(new java.awt.Color(255, 0, 153));
+        chck_rpcgettingready.setText("Getting Ready");
+        jPanel2.add(chck_rpcgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 63, -1, 30));
 
-        jCheckBox2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(255, 0, 153));
-        jCheckBox2.setText("Ceremony");
-        jPanel2.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 40));
+        chck_rpcceremony.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        chck_rpcceremony.setForeground(new java.awt.Color(255, 0, 153));
+        chck_rpcceremony.setText("Ceremony");
+        jPanel2.add(chck_rpcceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 40));
 
-        jCheckBox3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jCheckBox3.setForeground(new java.awt.Color(255, 0, 153));
-        jCheckBox3.setText("Photoshoot");
-        jPanel2.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
+        chck_rpcphotoshoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        chck_rpcphotoshoot.setForeground(new java.awt.Color(255, 0, 153));
+        chck_rpcphotoshoot.setText("Photoshoot");
+        jPanel2.add(chck_rpcphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 40));
 
-        jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jCheckBox4.setForeground(new java.awt.Color(255, 0, 153));
-        jCheckBox4.setText("Reception");
-        jPanel2.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 40));
+        chck_rpcreception.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        chck_rpcreception.setForeground(new java.awt.Color(255, 0, 153));
+        chck_rpcreception.setText("Reception");
+        jPanel2.add(chck_rpcreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 40));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 153));
@@ -261,49 +261,49 @@ public class Reports extends javax.swing.JFrame {
         jLabel27.setForeground(new java.awt.Color(255, 0, 153));
         jLabel27.setText("Number of Guest:");
         jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 100, -1));
-        jPanel4.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 130, 30));
+        jPanel4.add(txt_roinumberofguest, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 130, 30));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 0, 153));
         jLabel28.setText("Special/Request/Notes:");
         jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 150, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        ta_roispecialrequestnotes.setColumns(20);
+        ta_roispecialrequestnotes.setRows(5);
+        jScrollPane2.setViewportView(ta_roispecialrequestnotes);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 320, 180));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 330, 440, 360));
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("GO TO PAYMENT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_rpayment.setBackground(new java.awt.Color(255, 0, 153));
+        btn_rpayment.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn_rpayment.setForeground(new java.awt.Color(255, 255, 255));
+        btn_rpayment.setText("GO TO PAYMENT");
+        btn_rpayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_rpaymentActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 280, 60));
+        getContentPane().add(btn_rpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 280, 60));
 
-        jButton4.setBackground(new java.awt.Color(255, 0, 153));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("UPDATE");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 220, 60));
+        btn_rupdate.setBackground(new java.awt.Color(255, 0, 153));
+        btn_rupdate.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn_rupdate.setForeground(new java.awt.Color(255, 255, 255));
+        btn_rupdate.setText("UPDATE");
+        getContentPane().add(btn_rupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 220, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void txt_rpctimegettingreadyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rpctimegettingreadyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_txt_rpctimegettingreadyActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
         new ViewsAdmin.Payment().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_rpaymentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -341,13 +341,13 @@ public class Reports extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JButton btn_go;
+    private javax.swing.JButton btn_rpayment;
+    private javax.swing.JButton btn_rupdate;
+    private javax.swing.JCheckBox chck_rpcceremony;
+    private javax.swing.JCheckBox chck_rpcgettingready;
+    private javax.swing.JCheckBox chck_rpcphotoshoot;
+    private javax.swing.JCheckBox chck_rpcreception;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -375,23 +375,23 @@ public class Reports extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextArea ta_roispecialrequestnotes;
+    private javax.swing.JTextField txt_roinumberofguest;
+    private javax.swing.JTextField txt_rpclocationceremony;
+    private javax.swing.JTextField txt_rpclocationgettingready;
+    private javax.swing.JTextField txt_rpclocationphotoshoot;
+    private javax.swing.JTextField txt_rpclocationreception;
+    private javax.swing.JTextField txt_rpctimeceremony;
+    private javax.swing.JTextField txt_rpctimegettingready;
+    private javax.swing.JTextField txt_rpctimephotoshoot;
+    private javax.swing.JTextField txt_rpctimereception;
+    private javax.swing.JTextField txt_rwdaddress;
+    private javax.swing.JTextField txt_rwdbookername;
+    private javax.swing.JTextField txt_rwdcity;
+    private javax.swing.JTextField txt_rwdcontactnumber;
+    private javax.swing.JTextField txt_rwddateofwedding;
+    private javax.swing.JTextField txt_rwdfullnameofbride;
+    private javax.swing.JTextField txt_rwdfullnameofgroom;
+    private javax.swing.JTextField txt_search;
     // End of variables declaration//GEN-END:variables
 }
