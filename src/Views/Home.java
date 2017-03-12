@@ -54,6 +54,7 @@ public class Home extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
@@ -102,7 +103,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/arrow.png_48x48.png"))); // NOI18N
         jLabel3.setText("Sample Picture");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 460, 60));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 620, 60));
 
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -116,6 +117,17 @@ public class Home extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        jMenu6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu6.setForeground(new java.awt.Color(255, 0, 153));
+        jMenu6.setText("Admin Log-in");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenu5.add(jMenu6);
+
         jMenuBar2.add(jMenu5);
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
@@ -133,6 +145,11 @@ public class Home extends javax.swing.JFrame {
         new ViewsNonAdmin.WeddingDetails().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnBookNowActionPerformed
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        new ViewsAdmin.Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -165,6 +182,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;

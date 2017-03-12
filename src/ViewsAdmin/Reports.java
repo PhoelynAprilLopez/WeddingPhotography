@@ -17,6 +17,7 @@ public class Reports extends javax.swing.JFrame {
      */
     public Reports() {
         initComponents();
+        Themes.Theme.setIcon(this);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -302,7 +303,7 @@ public class Reports extends javax.swing.JFrame {
 
     private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
         new ViewsAdmin.Payment().setVisible(true);
-        dispose();
+        //dispose();
     }//GEN-LAST:event_btn_rpaymentActionPerformed
 
     /**

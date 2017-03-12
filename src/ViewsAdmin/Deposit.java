@@ -16,6 +16,7 @@ public class Deposit extends javax.swing.JFrame {
      */
     public Deposit() {
         initComponents();
+        Themes.Theme.setIcon(this);
     }
 
     /**
@@ -38,7 +39,6 @@ public class Deposit extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

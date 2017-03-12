@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Themes;
-
-import Views.SplashScreen;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.UIManager;

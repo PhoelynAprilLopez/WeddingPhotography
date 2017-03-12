@@ -5,10 +5,10 @@
         <group>
             <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Views/Home.java</file>
             <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Reports.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Views/SplashScreen.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Themes/Theme.java</file>
             <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Login.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsNonAdmin/WeddingDetails.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsNonAdmin/PhotoCoverage.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Payment.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Deposit.java</file>
             <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsNonAdmin/OtherInfo.java</file>
         </group>
     </open-files>

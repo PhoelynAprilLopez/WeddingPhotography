@@ -6,7 +6,6 @@
 package Views;
 
 import ViewsAdmin.Login;
-import ViewsNonAdmin.Customer;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;

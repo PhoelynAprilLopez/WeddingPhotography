@@ -18,6 +18,7 @@ public class Payment extends javax.swing.JFrame {
      */
     public Payment() {
         initComponents();
+        Themes.Theme.setIcon(this);
         
     }
 
