@@ -5,14 +5,12 @@
  */
 package Views;
 
-import ViewsAdmin.Login;
-import java.awt.Color;
+
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.UIManager;
 
 /**
  *

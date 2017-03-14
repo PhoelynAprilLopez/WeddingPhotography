@@ -82,9 +82,9 @@ public class Reports extends javax.swing.JFrame {
         ta_roispecialrequestnotes = new javax.swing.JTextArea();
         btn_rpayment = new javax.swing.JButton();
         btn_rupdate = new javax.swing.JButton();
+        btn_rbacktohome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(840, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -101,7 +101,7 @@ public class Reports extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1310, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1330, 120));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Search");
@@ -286,13 +286,24 @@ public class Reports extends javax.swing.JFrame {
                 btn_rpaymentActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_rpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 280, 60));
+        getContentPane().add(btn_rpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 240, 280, 60));
 
         btn_rupdate.setBackground(new java.awt.Color(255, 0, 153));
         btn_rupdate.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btn_rupdate.setForeground(new java.awt.Color(255, 255, 255));
         btn_rupdate.setText("UPDATE");
-        getContentPane().add(btn_rupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 220, 60));
+        getContentPane().add(btn_rupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 220, 60));
+
+        btn_rbacktohome.setBackground(new java.awt.Color(255, 0, 153));
+        btn_rbacktohome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btn_rbacktohome.setForeground(new java.awt.Color(255, 255, 255));
+        btn_rbacktohome.setText("BACK TO HOME");
+        btn_rbacktohome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rbacktohomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_rbacktohome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 240, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -303,8 +314,13 @@ public class Reports extends javax.swing.JFrame {
 
     private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
         new ViewsAdmin.Payment().setVisible(true);
-        //dispose();
+        dispose();
     }//GEN-LAST:event_btn_rpaymentActionPerformed
+
+    private void btn_rbacktohomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rbacktohomeActionPerformed
+        new Views.Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_rbacktohomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,6 +359,7 @@ public class Reports extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_go;
+    private javax.swing.JButton btn_rbacktohome;
     private javax.swing.JButton btn_rpayment;
     private javax.swing.JButton btn_rupdate;
     private javax.swing.JCheckBox chck_rpcceremony;

@@ -7,7 +7,7 @@ package Views;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import javax.swing.JFrame;
+
 
 /**
  *
@@ -44,6 +44,7 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         btnBookNow = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -54,7 +55,8 @@ public class Home extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        mi_registrationforadmin = new javax.swing.JMenuItem();
+        mi_adminlogin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
@@ -62,6 +64,8 @@ public class Home extends javax.swing.JFrame {
 
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
@@ -103,7 +107,7 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/arrow.png_48x48.png"))); // NOI18N
         jLabel3.setText("Sample Picture");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 620, 60));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 340, 60));
 
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -118,15 +122,23 @@ public class Home extends javax.swing.JFrame {
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jMenu6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu6.setForeground(new java.awt.Color(255, 0, 153));
-        jMenu6.setText("Admin Log-in");
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
+        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_registrationforadmin.setText("Registration for new Admin");
+        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_registrationforadminActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenu6);
+        jMenu5.add(mi_registrationforadmin);
+
+        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_adminlogin.setText("AdminLogin");
+        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_adminloginActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_adminlogin);
 
         jMenuBar2.add(jMenu5);
 
@@ -146,10 +158,15 @@ public class Home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnBookNowActionPerformed
 
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
+        new ViewsAdmin.AdminsRegistration().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_mi_registrationforadminActionPerformed
+
+    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
         new ViewsAdmin.Login().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenu6MouseClicked
+    }//GEN-LAST:event_mi_adminloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,9 +199,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem mi_adminlogin;
+    private javax.swing.JMenuItem mi_registrationforadmin;
     // End of variables declaration//GEN-END:variables
 }

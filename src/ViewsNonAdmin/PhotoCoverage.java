@@ -52,11 +52,13 @@ public class PhotoCoverage extends javax.swing.JFrame {
         txt_receptiontime = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         txt_receptionlocation = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_weddingdetails = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -67,8 +69,9 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pc2.png_48x48.png"))); // NOI18N
         jLabel1.setText("PHOTOGRAPHY COVERAGE");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 60));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,7 +105,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
                 btn_pcnextActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_pcnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 160, 41));
+        jPanel1.add(btn_pcnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 160, 41));
 
         chck_gettingready.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         chck_gettingready.setForeground(new java.awt.Color(255, 0, 153));
@@ -189,22 +192,38 @@ public class PhotoCoverage extends javax.swing.JFrame {
         txt_receptionlocation.setPreferredSize(new java.awt.Dimension(5, 18));
         jPanel1.add(txt_receptionlocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 330, 34));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 810, 400));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 810, 390));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wd.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 90, 70));
+        lbl_weddingdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wd.png_64x64.png"))); // NOI18N
+        lbl_weddingdetails.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_weddingdetailsMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lbl_weddingdetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 70));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pc2.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 70, 70));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 70, 70));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/g.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 110, 70));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 70, 70));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 153));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 350, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 350, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 300, 10));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, 10));
+
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jMenu2.setText("HOME");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(885, 626));
         setLocationRelativeTo(null);
@@ -218,6 +237,16 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private void chck_ceremonyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chck_ceremonyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chck_ceremonyActionPerformed
+
+    private void lbl_weddingdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_weddingdetailsMouseClicked
+        new ViewsNonAdmin.WeddingDetails().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_lbl_weddingdetailsMouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        new Views.Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -263,7 +292,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -272,9 +300,12 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lbl_weddingdetails;
     private javax.swing.JTextField txt_ceremonylocation;
     private javax.swing.JTextField txt_ceremonytime;
     private javax.swing.JTextField txt_gettingreadylocation;

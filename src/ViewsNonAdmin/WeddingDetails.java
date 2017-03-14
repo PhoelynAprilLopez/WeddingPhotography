@@ -32,6 +32,7 @@ public class WeddingDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -43,7 +44,6 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txt_fullnameofgroom = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        btn_wdcancel = new javax.swing.JButton();
         txt_address = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         txt_city = new javax.swing.JTextField();
@@ -55,6 +55,10 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -64,9 +68,9 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BAG.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wd.png_48x48.png"))); // NOI18N
         jLabel1.setText("WEDDING DETAILS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 60));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,88 +78,72 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 0, 153));
         jLabel10.setText("Booker Name:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, -1));
 
         txt_bookername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_bookername.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_bookername.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_bookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 270, 34));
+        jPanel1.add(txt_bookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 270, 34));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Date of Wedding :");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 130, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 130, -1));
 
         txt_dateofwedding.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_dateofwedding.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_dateofwedding.setPreferredSize(new java.awt.Dimension(5, 18));
-        txt_dateofwedding.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_dateofweddingActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txt_dateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 250, 34));
+        jPanel1.add(txt_dateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 250, 34));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 153));
         jLabel16.setText("Full Name of the Bride:");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 170, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 170, -1));
 
         txt_fullnameofbride.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_fullnameofbride.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_fullnameofbride.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_fullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 350, 34));
+        jPanel1.add(txt_fullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 350, 34));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 0, 153));
         jLabel17.setText("Full Name of the Groom:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 170, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 170, -1));
 
         txt_fullnameofgroom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_fullnameofgroom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_fullnameofgroom.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_fullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 350, 34));
+        jPanel1.add(txt_fullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 350, 34));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 153));
         jLabel18.setText("Address:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 70, -1));
-
-        btn_wdcancel.setBackground(new java.awt.Color(255, 0, 153));
-        btn_wdcancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btn_wdcancel.setForeground(new java.awt.Color(255, 255, 255));
-        btn_wdcancel.setText("Cancel");
-        btn_wdcancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_wdcancelActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_wdcancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 160, 41));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 70, -1));
 
         txt_address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_address.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_address.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 350, 34));
+        jPanel1.add(txt_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 350, 34));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 153));
         jLabel19.setText("City:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 53, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 53, -1));
 
         txt_city.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_city.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_city.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_city, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 350, 34));
+        jPanel1.add(txt_city, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 350, 34));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 153));
         jLabel20.setText("Contact Number:");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 130, -1));
 
         txt_contactnumber.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_contactnumber.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_contactnumber.setPreferredSize(new java.awt.Dimension(5, 18));
-        jPanel1.add(txt_contactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 350, 34));
+        jPanel1.add(txt_contactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 350, 34));
 
         btn_wdnext.setBackground(new java.awt.Color(255, 0, 153));
         btn_wdnext.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -166,42 +154,50 @@ public class WeddingDetails extends javax.swing.JFrame {
                 btn_wdnextActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_wdnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 160, 41));
+        jPanel1.add(btn_wdnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 160, 41));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 810, 440));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 810, 400));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wd.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, 70));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pc2.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 70, 70));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 70, 70));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/g.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 110, 70));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, -1, 70));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 350, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 350, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 300, 10));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, 10));
+
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jMenu2.setText("HOME");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(885, 653));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_wdcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdcancelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_wdcancelActionPerformed
-
-    private void txt_dateofweddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dateofweddingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_dateofweddingActionPerformed
 
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
 
     }//GEN-LAST:event_btn_wdnextActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+       new Views.Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -224,7 +220,6 @@ public class WeddingDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_wdcancel;
     private javax.swing.JButton btn_wdnext;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -237,6 +232,9 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

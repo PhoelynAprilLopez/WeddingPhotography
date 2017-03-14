@@ -73,14 +73,13 @@ public class Payment extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        rb_bdeposit = new javax.swing.JRadioButton();
-        rb_bfullpayment = new javax.swing.JRadioButton();
         btn_bpaymentcancel = new javax.swing.JButton();
         btn_bpaymentfullpayment = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1100, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -230,21 +229,6 @@ public class Payment extends javax.swing.JFrame {
         jLabel2.setText("                  PAYMENT DETAILS");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 340, -1));
 
-        rb_bdeposit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rb_bdeposit.setForeground(new java.awt.Color(255, 0, 153));
-        rb_bdeposit.setText("DEPOSIT");
-        rb_bdeposit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rb_bdepositMouseClicked(evt);
-            }
-        });
-        jPanel1.add(rb_bdeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
-
-        rb_bfullpayment.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        rb_bfullpayment.setForeground(new java.awt.Color(255, 0, 153));
-        rb_bfullpayment.setText("FULL PAYMENT");
-        jPanel1.add(rb_bfullpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
-
         btn_bpaymentcancel.setBackground(new java.awt.Color(255, 0, 153));
         btn_bpaymentcancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_bpaymentcancel.setForeground(new java.awt.Color(255, 255, 255));
@@ -255,7 +239,18 @@ public class Payment extends javax.swing.JFrame {
         btn_bpaymentfullpayment.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btn_bpaymentfullpayment.setForeground(new java.awt.Color(255, 255, 255));
         btn_bpaymentfullpayment.setText("SAVE");
+        btn_bpaymentfullpayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_bpaymentfullpaymentActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_bpaymentfullpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 141, 100, 40));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel1.setText("Total Amount:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 200, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 380, 210));
 
@@ -267,10 +262,10 @@ public class Payment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_btimegettingreadyActionPerformed
 
-    private void rb_bdepositMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_bdepositMouseClicked
-        new ViewsAdmin.Deposit().setVisible(true);
-        //dispose();
-    }//GEN-LAST:event_rb_bdepositMouseClicked
+    private void btn_bpaymentfullpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bpaymentfullpaymentActionPerformed
+        new ViewsAdmin.Reports().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_bpaymentfullpaymentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,6 +309,7 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JCheckBox chck_bgettingready;
     private javax.swing.JCheckBox chck_bphotoshoot;
     private javax.swing.JCheckBox chck_breception;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
@@ -335,8 +331,7 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JRadioButton rb_bdeposit;
-    private javax.swing.JRadioButton rb_bfullpayment;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextArea ta_bspecialrequestnotes;
     private javax.swing.JTextField txt_baddress;
     private javax.swing.JTextField txt_bbookername;

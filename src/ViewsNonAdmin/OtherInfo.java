@@ -39,10 +39,12 @@ public class OtherInfo extends javax.swing.JFrame {
         ta_specialrequestnotes = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_photocoverage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -77,7 +79,7 @@ public class OtherInfo extends javax.swing.JFrame {
                 btn_oidoneActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_oidone, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 340, 160, 41));
+        jPanel1.add(btn_oidone, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 160, 41));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 0, 153));
@@ -88,31 +90,48 @@ public class OtherInfo extends javax.swing.JFrame {
         ta_specialrequestnotes.setRows(5);
         jScrollPane1.setViewportView(ta_specialrequestnotes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 620, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 620, 200));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 810, 400));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 810, 390));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wd.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 90, 70));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/g.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 70, 70));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, 70, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pc2.png_64x64.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 70, 70));
+        lbl_photocoverage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pc2.png_64x64.png"))); // NOI18N
+        lbl_photocoverage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_photocoverageMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lbl_photocoverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 70, 70));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 153));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 350, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 350, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 0, 153));
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, -1));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 300, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 153));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/g.png_48x48.png"))); // NOI18N
         jLabel5.setText("OTHER INFORMATION");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
+
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jMenu2.setText("HOME");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(870, 621));
         setLocationRelativeTo(null);
@@ -122,6 +141,16 @@ public class OtherInfo extends javax.swing.JFrame {
       new Views.Home().setVisible(true);
       dispose();  
     }//GEN-LAST:event_btn_oidoneActionPerformed
+
+    private void lbl_photocoverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_photocoverageMouseClicked
+        new ViewsNonAdmin.PhotoCoverage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_lbl_photocoverageMouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        new Views.Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -164,13 +193,15 @@ public class OtherInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_photocoverage;
     private javax.swing.JTextArea ta_specialrequestnotes;
     private javax.swing.JTextField txt_numberofguest;
     // End of variables declaration//GEN-END:variables

@@ -34,7 +34,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_password = new javax.swing.JTextField();
         txt_username = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log - in");
@@ -50,47 +50,38 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
         jLabel1.setText("Username:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 153));
         jLabel2.setText("Password:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
         txt_password.setEnabled(false);
-        txt_password.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, -1));
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, -1));
+
+        btn_login.setBackground(new java.awt.Color(255, 0, 153));
+        btn_login.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_login.setText("Log-in");
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_passwordActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 180, -1));
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 180, -1));
+        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 90, 40));
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log-in");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, 40));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 310, 170));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 270));
 
         setSize(new java.awt.Dimension(406, 252));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_passwordActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         new ViewsAdmin.Reports().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,7 +119,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
