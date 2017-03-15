@@ -5,10 +5,14 @@
  */
 package Views;
 
-
+import DataObjects.WeddingDetails;
+import Database.MySql;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import static java.lang.Thread.sleep;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +27,7 @@ public final class SplashScreen extends javax.swing.JFrame {
     public void progressBarInitProperties() {
 
     }
-    
+
     public void frameClose() {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
@@ -121,9 +125,8 @@ public final class SplashScreen extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
+
         //</editor-fold>
-        
         //</editor-fold>
 
         /* Create and display the form */
@@ -133,6 +136,28 @@ public final class SplashScreen extends javax.swing.JFrame {
 
             }
         });
+
+        
+        WeddingDetails weddingDetails = new WeddingDetails();
+        weddingDetails.setBookerName("Jameshwart Lopez");
+        weddingDetails.setFullnameOfTheBride("Apriln Capillanes");
+        weddingDetails.setFullnameOfTheGroom("Jameshwart Lopez");
+        weddingDetails.setAddress("Pulpogan Consolacion Cebu");
+        weddingDetails.setCity("Cebu City");
+        weddingDetails.setContactNo("09336888305");
+        weddingDetails.setGettingReadyTime("11:30 AM");
+        weddingDetails.setGettingReadyLocation("Consolacion SM");
+        weddingDetails.setCeremonyTime("12:30");
+        weddingDetails.setCeremonyLocation("San Narciso Parish");
+        weddingDetails.setPhotoshootTime("1:00");
+        weddingDetails.setPhotoshootLocation("at church");
+        weddingDetails.setReceptionTime("1:30");
+        weddingDetails.setReceptionLocation("Orosia");
+        weddingDetails.setNumberOfGuest(100);
+        weddingDetails.setSpecialRequestNotes("Thank You");
+        WeddingDetails.save(weddingDetails);
+        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Themes;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import java.awt.Toolkit;
+import java.util.Properties;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
@@ -16,6 +18,13 @@ public class Theme {
     
     public static void renderAluminium(String className) {
         try {
+            Properties props = new Properties();
+            /**
+             * Set logo string in the pop up menu item
+             * @source http://www.jtattoo.net/HowTo_ChangeLogo.html
+             */
+            props.put("logoString", " "); 
+            AluminiumLookAndFeel.setCurrentTheme(props);
             UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(className).log(java.util.logging.Level.SEVERE, null, ex);

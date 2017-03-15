@@ -5,7 +5,6 @@
  */
 package ViewsNonAdmin;
 
-import javax.swing.JFrame;
 
 /**
  *
@@ -16,11 +15,12 @@ public class WeddingDetails extends javax.swing.JFrame {
     /**
      * Creates new form WeddingDetails
      */
+    
+    
     public WeddingDetails() {
         Themes.Theme.renderAluminium(WeddingDetails.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -57,6 +57,10 @@ public class WeddingDetails extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        mi_registrationforadmin = new javax.swing.JMenuItem();
+        mi_adminlogin = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -182,12 +186,43 @@ public class WeddingDetails extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
+        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
+        jMenu5.setText("Admin");
+        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_registrationforadmin.setText("Registration for new Admin");
+        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_registrationforadminActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_registrationforadmin);
+
+        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_adminlogin.setText("AdminLogin");
+        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_adminloginActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_adminlogin);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
+        jMenu4.setText("Terms and condition");
+        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(885, 653));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
@@ -198,6 +233,16 @@ public class WeddingDetails extends javax.swing.JFrame {
        new Views.Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
+        new ViewsAdmin.AdminsRegistration().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_mi_registrationforadminActionPerformed
+
+    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
+        new ViewsAdmin.Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_mi_adminloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,10 +279,14 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JMenuItem mi_adminlogin;
+    private javax.swing.JMenuItem mi_registrationforadmin;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_bookername;
     private javax.swing.JTextField txt_city;

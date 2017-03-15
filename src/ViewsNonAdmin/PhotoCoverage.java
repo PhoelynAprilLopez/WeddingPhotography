@@ -36,22 +36,22 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txt_gettingreadylocation = new javax.swing.JTextField();
         btn_pcnext = new javax.swing.JButton();
-        chck_gettingready = new javax.swing.JCheckBox();
-        chck_ceremony = new javax.swing.JCheckBox();
         jLabel21 = new javax.swing.JLabel();
         txt_ceremonytime = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txt_ceremonylocation = new javax.swing.JTextField();
-        chck_photoshoot = new javax.swing.JCheckBox();
         jLabel23 = new javax.swing.JLabel();
         txt_photoshoottime = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         txt_photoshootlocation = new javax.swing.JTextField();
-        chck_reception = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
         txt_receptiontime = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         txt_receptionlocation = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         lbl_weddingdetails = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -59,6 +59,10 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        mi_registrationforadmin = new javax.swing.JMenuItem();
+        mi_adminlogin = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -107,21 +111,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
         });
         jPanel1.add(btn_pcnext, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 160, 41));
 
-        chck_gettingready.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chck_gettingready.setForeground(new java.awt.Color(255, 0, 153));
-        chck_gettingready.setText("Getting Ready");
-        jPanel1.add(chck_gettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 30));
-
-        chck_ceremony.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chck_ceremony.setForeground(new java.awt.Color(255, 0, 153));
-        chck_ceremony.setText("Ceremony");
-        chck_ceremony.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chck_ceremonyActionPerformed(evt);
-            }
-        });
-        jPanel1.add(chck_ceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 30));
-
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 0, 153));
         jLabel21.setText("Time:");
@@ -141,11 +130,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
         txt_ceremonylocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_ceremonylocation.setPreferredSize(new java.awt.Dimension(5, 18));
         jPanel1.add(txt_ceremonylocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 330, 34));
-
-        chck_photoshoot.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chck_photoshoot.setForeground(new java.awt.Color(255, 0, 153));
-        chck_photoshoot.setText("Photoshoot");
-        jPanel1.add(chck_photoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 30));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 0, 153));
@@ -167,11 +151,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
         txt_photoshootlocation.setPreferredSize(new java.awt.Dimension(5, 18));
         jPanel1.add(txt_photoshootlocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 330, 34));
 
-        chck_reception.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        chck_reception.setForeground(new java.awt.Color(255, 0, 153));
-        chck_reception.setText("Reception");
-        jPanel1.add(chck_reception, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 30));
-
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 0, 153));
         jLabel25.setText("Time:");
@@ -191,6 +170,26 @@ public class PhotoCoverage extends javax.swing.JFrame {
         txt_receptionlocation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_receptionlocation.setPreferredSize(new java.awt.Dimension(5, 18));
         jPanel1.add(txt_receptionlocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 330, 34));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel2.setText("RECEPTION");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 130, 30));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel5.setText("GETTING READY ");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 130, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel6.setText("CEREMONY");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 130, 30));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel7.setText("PHOTOSHOOT");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 130, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 810, 390));
 
@@ -223,6 +222,36 @@ public class PhotoCoverage extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
+        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
+        jMenu5.setText("Admin");
+        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_registrationforadmin.setText("Registration for new Admin");
+        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_registrationforadminActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_registrationforadmin);
+
+        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
+        mi_adminlogin.setText("AdminLogin");
+        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_adminloginActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mi_adminlogin);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
+        jMenu4.setText("Terms and condition");
+        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(885, 626));
@@ -234,10 +263,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_pcnextActionPerformed
 
-    private void chck_ceremonyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chck_ceremonyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chck_ceremonyActionPerformed
-
     private void lbl_weddingdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_weddingdetailsMouseClicked
         new ViewsNonAdmin.WeddingDetails().setVisible(true);
         dispose();
@@ -247,6 +272,16 @@ public class PhotoCoverage extends javax.swing.JFrame {
         new Views.Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
+        new ViewsAdmin.AdminsRegistration().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_mi_registrationforadminActionPerformed
+
+    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
+        new ViewsAdmin.Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_mi_adminloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,13 +320,10 @@ public class PhotoCoverage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_pcnext;
-    private javax.swing.JCheckBox chck_ceremony;
-    private javax.swing.JCheckBox chck_gettingready;
-    private javax.swing.JCheckBox chck_photoshoot;
-    private javax.swing.JCheckBox chck_reception;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -300,12 +332,19 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl_weddingdetails;
+    private javax.swing.JMenuItem mi_adminlogin;
+    private javax.swing.JMenuItem mi_registrationforadmin;
     private javax.swing.JTextField txt_ceremonylocation;
     private javax.swing.JTextField txt_ceremonytime;
     private javax.swing.JTextField txt_gettingreadylocation;

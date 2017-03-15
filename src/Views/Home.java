@@ -5,8 +5,12 @@
  */
 package Views;
 
+import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import oracle.jrockit.jfr.JFR;
 
 
 /**

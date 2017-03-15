@@ -16,19 +16,8 @@ import javax.swing.JOptionPane;
 public class Config {
     
     public static String DB_SERVER = "localhost";
-    public static String DB_NAME = "wedding_photography";
+    public static String DB_NAME = "weddingphotography";
     public static String DB_USERNAME = "root";
     public static String DB_PASSWORD = "";
     
-    public static Connection dbConnection(){
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/weddingphotography", "root", "");
-            //JOptionPane.showMessageDialog(null, "DbConnection Stablished");
-            return conn;            
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "No Data Connection");
-            return null;
-        }
-    }
 }
