@@ -19,6 +19,39 @@ public class PhotoCoverage extends javax.swing.JFrame {
         Themes.Theme.setIcon(this);
         initComponents();
     }
+    
+    private DataObjects.WeddingDetails getWeddingDetails(){
+        DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+        
+        wedDetails.setGettingReadyTime(txt_gettingreadytime.getText());
+        wedDetails.setGettingReadyLocation(txt_gettingreadylocation.getText());
+        wedDetails.setCeremonyTime(txt_ceremonytime.getText());
+        wedDetails.setCeremonyLocation(txt_ceremonylocation.getText());
+        wedDetails.setPhotoshootTime(txt_photoshoottime.getText());
+        wedDetails.setPhotoshootLocation(txt_photoshootlocation.getText());
+        wedDetails.setReceptionTime(txt_receptiontime.getText());
+        wedDetails.setReceptionLocation(txt_receptionlocation.getText());
+        return wedDetails;
+    }
+    
+    private void setPhotoCoverageFormDetails(){
+        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
+            
+           DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+            
+            txt_gettingreadytime.setText(wedDetails.getGettingReadyTime());
+            txt_gettingreadylocation.setText(wedDetails.getReceptionLocation());
+            
+            txt_ceremonytime.setText(wedDetails.getCeremonyTime());
+            txt_ceremonylocation.setText(wedDetails.getCeremonyLocation());
+            
+            txt_photoshoottime.setText(wedDetails.getPhotoshootTime());
+            txt_photoshootlocation.setText(wedDetails.getPhotoshootLocation());
+            
+            txt_receptiontime.setText(wedDetails.getReceptionTime());
+            txt_receptionlocation.setText(wedDetails.getReceptionLocation());
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,6 +100,11 @@ public class PhotoCoverage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -259,11 +297,14 @@ public class PhotoCoverage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
+
+        this.getWeddingDetails();
         new ViewsNonAdmin.OtherInfo().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_pcnextActionPerformed
 
     private void lbl_weddingdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_weddingdetailsMouseClicked
+        this.getWeddingDetails();
         new ViewsNonAdmin.WeddingDetails().setVisible(true);
         dispose();
     }//GEN-LAST:event_lbl_weddingdetailsMouseClicked
@@ -282,6 +323,14 @@ public class PhotoCoverage extends javax.swing.JFrame {
         new ViewsAdmin.Login().setVisible(true);
         dispose();
     }//GEN-LAST:event_mi_adminloginActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
+            ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+            this.setPhotoCoverageFormDetails();
+        }
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

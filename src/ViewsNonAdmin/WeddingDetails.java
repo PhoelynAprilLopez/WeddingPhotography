@@ -12,6 +12,7 @@ package ViewsNonAdmin;
  */
 public class WeddingDetails extends javax.swing.JFrame {
 
+    public static DataObjects.WeddingDetails weddingDetails = null;
     /**
      * Creates new form WeddingDetails
      */
@@ -66,6 +67,11 @@ public class WeddingDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -222,8 +228,39 @@ public class WeddingDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private DataObjects.WeddingDetails getWeddingDetails(){
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        if(WeddingDetails.weddingDetails == null){
+            WeddingDetails.weddingDetails = wedDetails;
+        }
+        
+        WeddingDetails.weddingDetails.setBookerName(this.txt_bookername.getText());
+        WeddingDetails.weddingDetails.setFullnameOfTheBride(this.txt_fullnameofbride.getText());
+        WeddingDetails.weddingDetails.setFullnameOfTheGroom(this.txt_fullnameofgroom.getText());
+        WeddingDetails.weddingDetails.setAddress(this.txt_address.getText());
+        WeddingDetails.weddingDetails.setCity(this.txt_city.getText());
+        WeddingDetails.weddingDetails.setContactNo(this.txt_contactnumber.getText());
+        
+        return WeddingDetails.weddingDetails;
+    }
+    
+    private void setFormWeddingDetails(){
+        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
+            DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+            
+            txt_bookername.setText(wedDetails.getBookerName());
+            txt_fullnameofbride.setText(wedDetails.getFullnameOfTheBride());
+            txt_fullnameofgroom.setText(wedDetails.getFullnameOfTheGroom());
+            txt_address.setText(wedDetails.getAddress());
+            txt_city.setText(wedDetails.getCity());
+            txt_contactnumber.setText(wedDetails.getContactNo());
+        }
+    }
     
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
+        //GetWeddingDetails();
+        this.getWeddingDetails();
+        ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
 
@@ -243,6 +280,15 @@ public class WeddingDetails extends javax.swing.JFrame {
         new ViewsAdmin.Login().setVisible(true);
         dispose();
     }//GEN-LAST:event_mi_adminloginActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
+            ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+            this.setFormWeddingDetails();
+        }
+        
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

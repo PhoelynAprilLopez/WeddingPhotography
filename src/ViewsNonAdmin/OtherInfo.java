@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
-
+import DataObjects.WeddingDetails;
 /**
  *
  * @author LopezLaps
@@ -171,12 +171,20 @@ public class OtherInfo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void save(){
-          
+    
+    public void SavingBookinInformation(){
+        DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+        
+        wedDetails.setNumberOfGuest(Integer.parseInt(txt_numberofguest.getText()));
+        wedDetails.setSpecialRequestNotes(ta_specialrequestnotes.getText());
+        WeddingDetails.save(wedDetails);
+        
     }
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-      new Views.Home().setVisible(true);
-      dispose();  
+        SavingBookinInformation();
+        new Views.Home().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_btn_oidoneActionPerformed
 
     private void lbl_photocoverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_photocoverageMouseClicked

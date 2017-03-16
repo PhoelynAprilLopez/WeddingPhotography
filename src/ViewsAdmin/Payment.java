@@ -46,21 +46,17 @@ public class Payment extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txt_bcontactnumber = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        chck_bgettingready = new javax.swing.JCheckBox();
         txt_btimegettingready = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         txt_blocationgettingready = new javax.swing.JTextField();
-        chck_bceremony = new javax.swing.JCheckBox();
         jLabel19 = new javax.swing.JLabel();
         txt_btimeceremony = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         txt_blocationceremony = new javax.swing.JTextField();
-        chck_bphotoshoot = new javax.swing.JCheckBox();
         jLabel20 = new javax.swing.JLabel();
         txt_btimephotoshoot = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         txt_blocationphotoshoot = new javax.swing.JTextField();
-        chck_breception = new javax.swing.JCheckBox();
         jLabel15 = new javax.swing.JLabel();
         txt_btimereception = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -77,6 +73,10 @@ public class Payment extends javax.swing.JFrame {
         btn_bpaymentfullpayment = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -130,11 +130,6 @@ public class Payment extends javax.swing.JFrame {
         jLabel18.setText("Time:");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, -1, -1));
 
-        chck_bgettingready.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        chck_bgettingready.setForeground(new java.awt.Color(255, 0, 153));
-        chck_bgettingready.setText("Getting Ready");
-        getContentPane().add(chck_bgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, -1, 30));
-
         txt_btimegettingready.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_btimegettingreadyActionPerformed(evt);
@@ -148,11 +143,6 @@ public class Payment extends javax.swing.JFrame {
         getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, -1, -1));
         getContentPane().add(txt_blocationgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 60, 130, 30));
 
-        chck_bceremony.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        chck_bceremony.setForeground(new java.awt.Color(255, 0, 153));
-        chck_bceremony.setText("Ceremony");
-        getContentPane().add(chck_bceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 40));
-
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 153));
         jLabel19.setText("Time:");
@@ -165,11 +155,6 @@ public class Payment extends javax.swing.JFrame {
         getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 130, -1, -1));
         getContentPane().add(txt_blocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, 130, 30));
 
-        chck_bphotoshoot.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        chck_bphotoshoot.setForeground(new java.awt.Color(255, 0, 153));
-        chck_bphotoshoot.setText("Photoshoot");
-        getContentPane().add(chck_bphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, 40));
-
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 153));
         jLabel20.setText("Time:");
@@ -181,11 +166,6 @@ public class Payment extends javax.swing.JFrame {
         jLabel36.setText("Location:");
         getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, -1, -1));
         getContentPane().add(txt_blocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, 130, 30));
-
-        chck_breception.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        chck_breception.setForeground(new java.awt.Color(255, 0, 153));
-        chck_breception.setText("Reception");
-        getContentPane().add(chck_breception, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, 40));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
@@ -254,6 +234,26 @@ public class Payment extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 380, 210));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel13.setText("GETTING READY ");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, 40));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel14.setText("CEREMONY");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 70, 40));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel16.setText("PHOTOSHOOT");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, -1, 40));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel12.setText("RECEPTION");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, 30));
+
         setSize(new java.awt.Dimension(1005, 630));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -305,14 +305,14 @@ public class Payment extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_bpaymentcancel;
     private javax.swing.JButton btn_bpaymentfullpayment;
-    private javax.swing.JCheckBox chck_bceremony;
-    private javax.swing.JCheckBox chck_bgettingready;
-    private javax.swing.JCheckBox chck_bphotoshoot;
-    private javax.swing.JCheckBox chck_breception;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;

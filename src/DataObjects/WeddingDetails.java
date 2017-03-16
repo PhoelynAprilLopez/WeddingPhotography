@@ -44,6 +44,7 @@ public class WeddingDetails {
      * @param id 
      */
     public void setId(Integer id){
+        
         this.Id = id;
     }
     
@@ -56,6 +57,7 @@ public class WeddingDetails {
     }
     
     public void setBookerName(String bookername){
+       
         this.bookername = bookername;
     }
     
@@ -190,11 +192,31 @@ public class WeddingDetails {
     public String getSpecialRequestNotes(){
         return this.special_request_notes;
     }
+    
+    public void logData(){
+        System.out.println("bookername :> "+this.getBookerName());
+        System.out.println("dateofwedding :> "+this.getDateOfWedding());
+        System.out.println("fullnameofthebride :> "+this.getFullnameOfTheBride());
+        System.out.println("fullnameofthegroom :> "+this.getFullnameOfTheGroom());
+        System.out.println("address :> "+this.getAddress());
+        System.out.println("city :> "+this.getCity());
+        System.out.println("contactno :> "+this.getContactNo());
+        System.out.println("gettingreadytime :> "+this.getGettingReadyTime());
+        System.out.println("gettingreadylocation :> "+this.getGettingReadyLocation());
+        System.out.println("ceremonytime :> "+this.getCeremonyTime());
+        System.out.println("ceremonylocation :> "+this.getCeremonyLocation());
+        System.out.println("photoshoottime :> "+this.getPhotoshootTime());
+        System.out.println("photoshootlocation :> "+this.getPhotoshootLocation());
+        System.out.println("receptiontime :> "+this.getReceptionTime());
+        System.out.println("receptionlocation :> "+this.getReceptionLocation());
+        System.out.println("numberofguest :> "+this.getNumberOfGuest());
+        System.out.println("special_request_notes :> "+this.getSpecialRequestNotes());
+        
+    }
     public static WeddingDetails getWeddingDetails(Integer Id){
         //Todo get database details from BookingInformation base on bookInfoId 
         return new WeddingDetails();
     }
-    
     
     /**
      * Method to create or save wedding book information or details

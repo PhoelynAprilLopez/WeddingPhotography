@@ -138,25 +138,25 @@ public final class SplashScreen extends javax.swing.JFrame {
         });
 
         
-        WeddingDetails weddingDetails = new WeddingDetails();
-        weddingDetails.setBookerName("Jameshwart Lopez");
-        weddingDetails.setFullnameOfTheBride("Apriln Capillanes");
-        weddingDetails.setFullnameOfTheGroom("Jameshwart Lopez");
-        weddingDetails.setAddress("Pulpogan Consolacion Cebu");
-        weddingDetails.setCity("Cebu City");
-        weddingDetails.setContactNo("09336888305");
-        weddingDetails.setGettingReadyTime("11:30 AM");
-        weddingDetails.setGettingReadyLocation("Consolacion SM");
-        weddingDetails.setCeremonyTime("12:30");
-        weddingDetails.setCeremonyLocation("San Narciso Parish");
-        weddingDetails.setPhotoshootTime("1:00");
-        weddingDetails.setPhotoshootLocation("at church");
-        weddingDetails.setReceptionTime("1:30");
-        weddingDetails.setReceptionLocation("Orosia");
-        weddingDetails.setNumberOfGuest(100);
-        weddingDetails.setSpecialRequestNotes("Thank You");
-        WeddingDetails.save(weddingDetails);
-        
+//        WeddingDetails weddingDetails = new WeddingDetails();
+//        weddingDetails.setBookerName("Jameshwart Lopez");
+//        weddingDetails.setFullnameOfTheBride("Apriln Capillanes");
+//        weddingDetails.setFullnameOfTheGroom("Jameshwart Lopez");
+//        weddingDetails.setAddress("Pulpogan Consolacion Cebu");
+//        weddingDetails.setCity("Cebu City");
+//        weddingDetails.setContactNo("09336888305");
+//        weddingDetails.setGettingReadyTime("11:30 AM");
+//        weddingDetails.setGettingReadyLocation("Consolacion SM");
+//        weddingDetails.setCeremonyTime("12:30");
+//        weddingDetails.setCeremonyLocation("San Narciso Parish");
+//        weddingDetails.setPhotoshootTime("1:00");
+//        weddingDetails.setPhotoshootLocation("at church");
+//        weddingDetails.setReceptionTime("1:30");
+//        weddingDetails.setReceptionLocation("Orosia");
+//        weddingDetails.setNumberOfGuest(100);
+//        weddingDetails.setSpecialRequestNotes("Thank You");
+//        WeddingDetails.save(weddingDetails);
+//        
 
     }
 
