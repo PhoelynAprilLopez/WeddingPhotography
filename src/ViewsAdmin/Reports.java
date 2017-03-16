@@ -76,10 +76,10 @@ public class Reports extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        txt_roinumberofguest = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ta_roispecialrequestnotes = new javax.swing.JTextArea();
+        txt_roinumberofguest = new javax.swing.JTextField();
         btn_rpayment = new javax.swing.JButton();
         btn_rupdate = new javax.swing.JButton();
         btn_rbacktohome = new javax.swing.JButton();
@@ -125,52 +125,52 @@ public class Reports extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setText("BOOKER NAME:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 90, -1));
-        jPanel1.add(txt_rwdbookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 90, -1));
+        jPanel1.add(txt_rwdbookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 153));
         jLabel4.setText("DATE OF WEDDING:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 150, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 150, 30));
 
         txt_rwddateofwedding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_rwddateofweddingActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_rwddateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 130, 20));
-        jPanel1.add(txt_rwdfullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 130, 20));
+        jPanel1.add(txt_rwddateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 30));
+        jPanel1.add(txt_rwdfullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 153));
         jLabel5.setText("FULL NAME OF THE BRIDE:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 170, 20));
-        jPanel1.add(txt_rwdfullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 20));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 170, 30));
+        jPanel1.add(txt_rwdfullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 153));
         jLabel6.setText("FULL NAME OF THE GROOM:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 170, 20));
-        jPanel1.add(txt_rwdaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, 30));
+        jPanel1.add(txt_rwdaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 153));
         jLabel7.setText("ADDRESS:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 70, 20));
-        jPanel1.add(txt_rwdcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 130, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 100, 30));
+        jPanel1.add(txt_rwdcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 130, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 153));
         jLabel8.setText("CITY:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 50, -1));
-        jPanel1.add(txt_rwdcontactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 130, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 80, 30));
+        jPanel1.add(txt_rwdcontactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 0, 153));
         jLabel9.setText("CONTACT #:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 100, 20));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 110, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 360, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 360, 560));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -183,56 +183,56 @@ public class Reports extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 0, 153));
         jLabel11.setText("Location:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, 20));
-        jPanel2.add(txt_rpclocationgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 20));
-        jPanel2.add(txt_rpclocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 20));
-        jPanel2.add(txt_rpclocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 130, 20));
-        jPanel2.add(txt_rpclocationreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 130, 20));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, 30));
+        jPanel2.add(txt_rpclocationgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 30));
+        jPanel2.add(txt_rpclocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
+        jPanel2.add(txt_rpclocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 130, 30));
+        jPanel2.add(txt_rpclocationreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 130, 30));
 
         txt_rpctimegettingready.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_rpctimegettingreadyActionPerformed(evt);
             }
         });
-        jPanel2.add(txt_rpctimegettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 20));
+        jPanel2.add(txt_rpctimegettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Time:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, 20));
-        jPanel2.add(txt_rpctimeceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 20));
-        jPanel2.add(txt_rpctimephotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 50, 20));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, 30));
+        jPanel2.add(txt_rpctimeceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 30));
+        jPanel2.add(txt_rpctimephotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 50, 30));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 0, 153));
         jLabel34.setText("Location:");
-        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, 20));
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, 30));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 0, 153));
         jLabel35.setText("Location:");
-        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 20));
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 30));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 0, 153));
         jLabel36.setText("Location:");
-        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, 20));
-        jPanel2.add(txt_rpctimereception, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 50, 20));
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, 30));
+        jPanel2.add(txt_rpctimereception, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 50, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 153));
         jLabel18.setText("Time:");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, 30));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 153));
         jLabel19.setText("Time:");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, 20));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, 30));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 153));
         jLabel20.setText("Time:");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, 20));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 0, 153));
@@ -254,7 +254,7 @@ public class Reports extends javax.swing.JFrame {
         jLabel16.setText("PHOTOSHOOT");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 460, 270));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 460, 300));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -262,13 +262,12 @@ public class Reports extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 0, 153));
         jLabel26.setText("                           Other Information");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 0, 153));
         jLabel27.setText("Number of Guest:");
         jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 100, -1));
-        jPanel4.add(txt_roinumberofguest, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 130, 30));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 0, 153));
@@ -279,9 +278,10 @@ public class Reports extends javax.swing.JFrame {
         ta_roispecialrequestnotes.setRows(5);
         jScrollPane2.setViewportView(ta_roispecialrequestnotes);
 
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 710, 100));
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 310, 100));
+        jPanel4.add(txt_roinumberofguest, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 130, 30));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 840, 270));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 460, 250));
 
         btn_rpayment.setBackground(new java.awt.Color(255, 0, 153));
         btn_rpayment.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
