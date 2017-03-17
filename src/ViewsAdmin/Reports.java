@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 package ViewsAdmin;
-import javax.swing.JFrame;
 
 /**
  *
  * @author LopezLaps
  */
 public class Reports extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Reports
      */
@@ -31,7 +30,7 @@ public class Reports extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table_user = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txt_search = new javax.swing.JTextField();
         btn_go = new javax.swing.JButton();
@@ -88,7 +87,7 @@ public class Reports extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table_user.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -99,7 +98,7 @@ public class Reports extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table_user);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 350, 400));
 
@@ -112,7 +111,12 @@ public class Reports extends javax.swing.JFrame {
         btn_go.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_go.setForeground(new java.awt.Color(255, 255, 255));
         btn_go.setText("GO");
-        getContentPane().add(btn_go, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 50, 30));
+        btn_go.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_goActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_go, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 60, 30));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,12 +136,6 @@ public class Reports extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 0, 153));
         jLabel4.setText("DATE OF WEDDING:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 150, 30));
-
-        txt_rwddateofwedding.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_rwddateofweddingActionPerformed(evt);
-            }
-        });
         jPanel1.add(txt_rwddateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 30));
         jPanel1.add(txt_rwdfullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 130, 30));
 
@@ -188,12 +186,6 @@ public class Reports extends javax.swing.JFrame {
         jPanel2.add(txt_rpclocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
         jPanel2.add(txt_rpclocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 130, 30));
         jPanel2.add(txt_rpclocationreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 130, 30));
-
-        txt_rpctimegettingready.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_rpctimegettingreadyActionPerformed(evt);
-            }
-        });
         jPanel2.add(txt_rpctimegettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -315,13 +307,9 @@ public class Reports extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_rpctimegettingreadyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rpctimegettingreadyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_rpctimegettingreadyActionPerformed
-
     private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
         new ViewsAdmin.Payment().setVisible(true);
-        dispose();
+        //dispose();
     }//GEN-LAST:event_btn_rpaymentActionPerformed
 
     private void btn_rbacktohomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rbacktohomeActionPerformed
@@ -329,9 +317,10 @@ public class Reports extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_rbacktohomeActionPerformed
 
-    private void txt_rwddateofweddingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rwddateofweddingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_rwddateofweddingActionPerformed
+   
+    private void btn_goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_goActionPerformed
+        
+    }//GEN-LAST:event_btn_goActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,8 +392,8 @@ public class Reports extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea ta_roispecialrequestnotes;
+    private javax.swing.JTable table_user;
     private javax.swing.JTextField txt_roinumberofguest;
     private javax.swing.JTextField txt_rpclocationceremony;
     private javax.swing.JTextField txt_rpclocationgettingready;

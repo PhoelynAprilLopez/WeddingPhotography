@@ -60,13 +60,13 @@ public class AdminsRegistration extends javax.swing.JFrame {
         btn_backtohome.setBackground(new java.awt.Color(255, 0, 153));
         btn_backtohome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_backtohome.setForeground(new java.awt.Color(255, 255, 255));
-        btn_backtohome.setText("BACK TO HOME");
+        btn_backtohome.setText("HOME");
         btn_backtohome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_backtohomeActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_backtohome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 170, 50));
+        jPanel1.add(btn_backtohome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 90, 50));
 
         btn_addnew1.setBackground(new java.awt.Color(255, 0, 153));
         btn_addnew1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

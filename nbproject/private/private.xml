@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Views/SplashScreen.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Database/MySql.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/Configuration/Config.java</file>
-            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/DataObjects/WeddingDetails.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Reports.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/Payment.java</file>
+            <file>file:/C:/Phoelyn%20April/Final%20Java/WeddingPhotography/src/ViewsAdmin/AdminsRegistration.java</file>
         </group>
     </open-files>
 </project-private>
