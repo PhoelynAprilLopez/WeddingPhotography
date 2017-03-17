@@ -5,19 +5,38 @@
  */
 package ViewsAdmin;
 
+import Database.MySql;
+import ViewsNonAdmin.WeddingDetails;
+import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author LopezLaps
  */
 public class Reports extends javax.swing.JFrame {
-    
+
+    public String driver = "com.mysql.jdbc.Driver";
+    public Connection connection = null;
+    public PreparedStatement preparedStatement = null;
+    public ResultSet resultSet = null;
+
     /**
      * Creates new form Reports
      */
     public Reports() {
         initComponents();
         Themes.Theme.setIcon(this);
-       
+        this.showDataToWeddingBookTable();
     }
 
     /**
@@ -98,6 +117,11 @@ public class Reports extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        table_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_userMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table_user);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 350, 400));
@@ -105,6 +129,12 @@ public class Reports extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Search");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 20));
+
+        txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_searchKeyPressed(evt);
+            }
+        });
         getContentPane().add(txt_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 210, 30));
 
         btn_go.setBackground(new java.awt.Color(255, 0, 153));
@@ -307,6 +337,7 @@ public class Reports extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
         new ViewsAdmin.Payment().setVisible(true);
         //dispose();
@@ -317,10 +348,72 @@ public class Reports extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_rbacktohomeActionPerformed
 
-   
+    private void showDataToWeddingBookTable() {
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        resultSet = wedDetails.getBookerBrideAndGroom();
+        table_user.setModel(DbUtils.resultSetToTableModel(resultSet));
+        ((DefaultTableCellRenderer) table_user.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.LEFT);
+    }
+
+    private void searchAndShowDataToWeddingBookTable() {
+        String searchKeyWords = txt_search.getText();
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        resultSet = wedDetails.getBookerBrideAndGroom(searchKeyWords);
+        table_user.setModel(DbUtils.resultSetToTableModel(resultSet));
+        ((DefaultTableCellRenderer) table_user.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.LEFT);
+    }
+
+
     private void btn_goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_goActionPerformed
-        
+        this.searchAndShowDataToWeddingBookTable();
     }//GEN-LAST:event_btn_goActionPerformed
+
+    private void txt_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.searchAndShowDataToWeddingBookTable();
+        }
+        System.out.println("Key code being press by the user :>" + evt.getKeyCode());
+    }//GEN-LAST:event_txt_searchKeyPressed
+
+    private void table_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_userMouseClicked
+
+        int row = table_user.getSelectedRow();
+        String id = (table_user.getModel().getValueAt(row, 0).toString());
+
+        System.out.println(id);
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        ResultSet rs = wedDetails.getWeddingDetailsById(id);
+        
+        try {
+            if (rs.next()) {
+                this.txt_rwdbookername.setText(rs.getString("bookername"));
+                this.txt_rwddateofwedding.setText(rs.getString("dateofwedding"));
+                this.txt_rwdfullnameofbride.setText(rs.getString("fullnameofthebride"));
+                this.txt_rwdfullnameofgroom.setText(rs.getString("fullnameofthegroom"));
+                this.txt_rwdaddress.setText(rs.getString("address"));
+                this.txt_rwdcity.setText(rs.getString("city"));
+   
+                this.txt_rwdcontactnumber.setText(rs.getString("contactno"));
+                this.txt_rpctimegettingready.setText(rs.getString("gettingreadytime"));
+                this.txt_rpclocationgettingready.setText(rs.getString("gettingreadylocation"));
+                this.txt_rpctimeceremony.setText(rs.getString("ceremonytime"));
+                this.txt_rpclocationceremony.setText(rs.getString("ceremonylocation"));
+                this.txt_rpctimephotoshoot.setText(rs.getString("photoshoottime"));
+                this.txt_rpclocationphotoshoot.setText(rs.getString("photoshootlocation"));
+                this.txt_rpctimereception.setText(rs.getString("receptiontime"));
+                this.txt_rpclocationreception.setText(rs.getString("receptionlocation"));
+                
+                this.txt_roinumberofguest.setText(rs.getString("numberofguest"));
+                this.ta_roispecialrequestnotes.setText(rs.getString("special_request_notes"));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_table_userMouseClicked
 
     /**
      * @param args the command line arguments
@@ -353,6 +446,7 @@ public class Reports extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Reports().setVisible(true);
+
             }
         });
     }

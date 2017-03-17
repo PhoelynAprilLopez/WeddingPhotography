@@ -239,6 +239,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         }
         
         WeddingDetails.weddingDetails.setBookerName(this.txt_bookername.getText());
+        WeddingDetails.weddingDetails.setDateOfWedding(this.txt_dateofwedding.getText());
         WeddingDetails.weddingDetails.setFullnameOfTheBride(this.txt_fullnameofbride.getText());
         WeddingDetails.weddingDetails.setFullnameOfTheGroom(this.txt_fullnameofgroom.getText());
         WeddingDetails.weddingDetails.setAddress(this.txt_address.getText());

@@ -5,6 +5,7 @@
  */
 package ViewsNonAdmin;
 import DataObjects.WeddingDetails;
+import ViewsAdmin.Reports;
 /**
  *
  * @author LopezLaps
@@ -176,16 +177,18 @@ public class OtherInfo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    public void SavingBookinInformation(){
+    public DataObjects.WeddingDetails getOtherInformation(){
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
         
         wedDetails.setNumberOfGuest(Integer.parseInt(txt_numberofguest.getText()));
         wedDetails.setSpecialRequestNotes(ta_specialrequestnotes.getText());
         WeddingDetails.save(wedDetails);
-        
+        return wedDetails;
     }
+    
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-        SavingBookinInformation();
+ 
+        getOtherInformation();
         new Views.Home().setVisible(true);
         dispose();
         

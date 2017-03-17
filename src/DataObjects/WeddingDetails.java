@@ -6,7 +6,7 @@
 package DataObjects;
 
 import Database.MySql;
-import Views.SplashScreen;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class WeddingDetails {
     private String tableName = "weddingdetails";
+    private MySql mysql = null;
     
     private Integer Id = null;
     private String bookername = null;
@@ -38,6 +39,53 @@ public class WeddingDetails {
     private String receptionlocation = null;
     private Integer numberofguest = null;
     private String special_request_notes = null;
+    
+    public WeddingDetails(){
+        this.mysql = new MySql();
+    }
+    
+    
+    
+    public ResultSet getAll(){
+        return mysql.getAll(this.tableName);
+    }
+    
+    public ResultSet getWeddingDetailsById(String id){
+        String sql = "SELECT * FROM `"+this.tableName+"` WHERE id = '" + id + "' ";
+        System.out.println(sql);
+        return mysql.getDataBySql(sql);
+    }
+    
+    public ResultSet getBookerBrideAndGroom(){
+        String sql = "SELECT "
+                + "id AS 'ID', "
+                + "bookername AS 'Booker Name', "
+                + "fullnameofthebride AS 'Name of Bride', "
+                + "fullnameofthegroom AS 'Name of Groom' FROM  "+this.tableName;
+        
+        System.out.println(sql);
+        return mysql.getDataBySql(sql);
+    } 
+    
+    public ResultSet getBookerBrideAndGroom( String searchKeyWords ){
+        String sql = "SELECT "
+                + "id AS 'ID', "
+                + "bookername AS 'Booker Name', "
+                + "fullnameofthebride AS 'Name of Bride', "
+                + "fullnameofthegroom AS 'Name of Groom' FROM  "+this.tableName;
+        
+        if(null != searchKeyWords){
+            sql += " WHERE bookername LIKE '%"+searchKeyWords+"%' OR "
+                    + "fullnameofthebride LIKE '%"+searchKeyWords+"%' OR "
+                    + "fullnameofthegroom LIKE '%"+searchKeyWords+"%'  ";
+        }
+        System.out.println(sql);
+        return mysql.getDataBySql(sql);
+    }
+    
+    public ResultSet getAllBookers(){
+        return mysql.getDataBySql("SELECT bookername AS 'Booker Name' FROM  "+this.tableName);
+    }
     
     /**
      * Sets booking information Id

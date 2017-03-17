@@ -20,7 +20,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
         initComponents();
     }
     
-    private DataObjects.WeddingDetails getWeddingDetails(){
+    private DataObjects.WeddingDetails getPhotoCoverage(){
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
         
         wedDetails.setGettingReadyTime(txt_gettingreadytime.getText());
@@ -302,13 +302,13 @@ public class PhotoCoverage extends javax.swing.JFrame {
 
     private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
 
-        this.getWeddingDetails();
+        this.getPhotoCoverage();
         new ViewsNonAdmin.OtherInfo().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_pcnextActionPerformed
 
     private void lbl_weddingdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_weddingdetailsMouseClicked
-        this.getWeddingDetails();
+        this.getPhotoCoverage();
         new ViewsNonAdmin.WeddingDetails().setVisible(true);
         dispose();
     }//GEN-LAST:event_lbl_weddingdetailsMouseClicked

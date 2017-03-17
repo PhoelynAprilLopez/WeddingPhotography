@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -63,6 +65,29 @@ public class MySql implements DatabaseConnect {
         //Todo Build update query string
 
         return false;
+    }
+
+    public ResultSet getDataBySql(String sql) {
+
+        try {
+            this.preparedStatement = this.connection.prepareStatement(sql);
+            this.resultSet = preparedStatement.executeQuery();
+            return this.resultSet;
+        } catch (SQLException ex) {
+            Logger.getLogger(MySql.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    public ResultSet getAll(String tableName, String columns) {
+        String sql = "SELECT " + columns + " FROM " + tableName;
+        return this.getDataBySql(sql);
+    }
+
+    public ResultSet getAll(String tableName) {
+        String sql = "SELECT * FROM " + tableName;
+        return this.getDataBySql(sql);
     }
 
     public void close() {
