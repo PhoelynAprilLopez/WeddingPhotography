@@ -31,7 +31,6 @@ public class MySql implements DatabaseConnect {
     }
 
     public Boolean insert(String tableName, Map hashMapStringAndValues) throws SQLException {
-        //Todo Build insert query string
         int columnAndValueSize = hashMapStringAndValues.size();
         String columnNames = "";
         String positionalChars = "";
@@ -61,10 +60,30 @@ public class MySql implements DatabaseConnect {
         return this.preparedStatement.execute();
     }
 
-    public Boolean update(String tableName, Map hassMapStringAndValues) {
-        //Todo Build update query string
-
-        return false;
+    public Boolean update(String tableName, Map hashMapStringAndValues, String id) throws SQLException {
+        //Todo Build update query string and update query execution to be more flexible
+        String columnNamesAndValues = "";
+       
+        for (Object key : hashMapStringAndValues.keySet()) {
+            columnNamesAndValues += key + " = ? ,";
+            System.out.println(key + " - " + hashMapStringAndValues.get(key));
+        }
+        /**
+         * Remove last comma (,) in the string column name
+         */
+        columnNamesAndValues = columnNamesAndValues.substring(0, columnNamesAndValues.length() - 1);
+        String sqlUpdate = "UPDATE " + tableName + " SET " + columnNamesAndValues + " WHERE id = ? ";
+        System.out.println("Created Update Sql Command :> " + sqlUpdate);
+        this.preparedStatement = this.connection.prepareStatement(sqlUpdate); 
+        int psStringCounter = 1;
+        for (Object key : hashMapStringAndValues.keySet()) {
+            this.preparedStatement.setString(psStringCounter, hashMapStringAndValues.get(key).toString());
+            psStringCounter += 1;
+        }
+        this.preparedStatement.setString(psStringCounter, id);
+        int updateExecuted = this.preparedStatement.executeUpdate();
+        System.out.println("Update executed :> "+updateExecuted);
+        return updateExecuted >= 1;
     }
 
     public ResultSet getDataBySql(String sql) {

@@ -6,6 +6,7 @@
 package Views;
 
 import DataObjects.WeddingDetails;
+import DataObjects.WeddingInfo;
 import Database.MySql;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -157,7 +158,6 @@ public final class SplashScreen extends javax.swing.JFrame {
 //        weddingDetails.setSpecialRequestNotes("Thank You");
 //        WeddingDetails.save(weddingDetails);
 //        
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

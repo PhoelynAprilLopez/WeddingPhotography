@@ -182,7 +182,7 @@ public class OtherInfo extends javax.swing.JFrame {
         
         wedDetails.setNumberOfGuest(Integer.parseInt(txt_numberofguest.getText()));
         wedDetails.setSpecialRequestNotes(ta_specialrequestnotes.getText());
-        WeddingDetails.save(wedDetails);
+        wedDetails.save();
         return wedDetails;
     }
     

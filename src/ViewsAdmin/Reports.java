@@ -320,6 +320,11 @@ public class Reports extends javax.swing.JFrame {
         btn_rupdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_rupdate.setForeground(new java.awt.Color(255, 255, 255));
         btn_rupdate.setText("UPDATE");
+        btn_rupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rupdateActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_rupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 80, 30));
 
         btn_rbacktohome.setBackground(new java.awt.Color(255, 0, 153));
@@ -384,7 +389,7 @@ public class Reports extends javax.swing.JFrame {
         System.out.println(id);
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
         ResultSet rs = wedDetails.getWeddingDetailsById(id);
-        
+
         try {
             if (rs.next()) {
                 this.txt_rwdbookername.setText(rs.getString("bookername"));
@@ -393,8 +398,8 @@ public class Reports extends javax.swing.JFrame {
                 this.txt_rwdfullnameofgroom.setText(rs.getString("fullnameofthegroom"));
                 this.txt_rwdaddress.setText(rs.getString("address"));
                 this.txt_rwdcity.setText(rs.getString("city"));
-   
                 this.txt_rwdcontactnumber.setText(rs.getString("contactno"));
+
                 this.txt_rpctimegettingready.setText(rs.getString("gettingreadytime"));
                 this.txt_rpclocationgettingready.setText(rs.getString("gettingreadylocation"));
                 this.txt_rpctimeceremony.setText(rs.getString("ceremonytime"));
@@ -403,10 +408,10 @@ public class Reports extends javax.swing.JFrame {
                 this.txt_rpclocationphotoshoot.setText(rs.getString("photoshootlocation"));
                 this.txt_rpctimereception.setText(rs.getString("receptiontime"));
                 this.txt_rpclocationreception.setText(rs.getString("receptionlocation"));
-                
+
                 this.txt_roinumberofguest.setText(rs.getString("numberofguest"));
                 this.ta_roispecialrequestnotes.setText(rs.getString("special_request_notes"));
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
@@ -414,6 +419,46 @@ public class Reports extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_table_userMouseClicked
+
+    private DataObjects.WeddingDetails getBookingInformation() {
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+
+        wedDetails.setBookerName(this.txt_rwdbookername.getText());
+        wedDetails.setDateOfWedding(this.txt_rwddateofwedding.getText());
+        wedDetails.setFullnameOfTheBride(this.txt_rwdfullnameofbride.getText());
+        wedDetails.setFullnameOfTheGroom(this.txt_rwdfullnameofgroom.getText());
+        wedDetails.setAddress(this.txt_rwdaddress.getText());
+        wedDetails.setCity(this.txt_rwdcity.getText());
+        wedDetails.setContactNo(this.txt_rwdcontactnumber.getText());
+
+        wedDetails.setGettingReadyTime(txt_rpctimegettingready.getText());
+        wedDetails.setGettingReadyLocation(txt_rpclocationgettingready.getText());
+        wedDetails.setCeremonyTime(txt_rpctimeceremony.getText());
+        wedDetails.setCeremonyLocation(txt_rpclocationceremony.getText());
+        wedDetails.setPhotoshootTime(txt_rpctimephotoshoot.getText());
+        wedDetails.setPhotoshootLocation(txt_rpclocationphotoshoot.getText());
+        wedDetails.setReceptionTime(txt_rpctimereception.getText());
+        wedDetails.setReceptionLocation(txt_rpclocationreception.getText());
+
+        wedDetails.setNumberOfGuest(Integer.parseInt(txt_roinumberofguest.getText()));
+        wedDetails.setSpecialRequestNotes(ta_roispecialrequestnotes.getText());
+
+        //DataObjects.WeddingDetails.save(wedDetails);
+        return wedDetails;
+    }
+
+
+    private void btn_rupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rupdateActionPerformed
+        DataObjects.WeddingDetails wedDetails = this.getBookingInformation();
+
+        int row = table_user.getSelectedRow();
+        Integer id = Integer.parseInt(table_user.getModel().getValueAt(row, 0).toString());
+        wedDetails.setId(id);
+        if (wedDetails.update()) {
+            this.showDataToWeddingBookTable();
+        }
+
+    }//GEN-LAST:event_btn_rupdateActionPerformed
 
     /**
      * @param args the command line arguments

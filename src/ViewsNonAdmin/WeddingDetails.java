@@ -254,6 +254,7 @@ public class WeddingDetails extends javax.swing.JFrame {
             DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
             
             txt_bookername.setText(wedDetails.getBookerName());
+            txt_dateofwedding.setText(wedDetails.getDateOfWedding());
             txt_fullnameofbride.setText(wedDetails.getFullnameOfTheBride());
             txt_fullnameofgroom.setText(wedDetails.getFullnameOfTheGroom());
             txt_address.setText(wedDetails.getAddress());
