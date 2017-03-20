@@ -51,6 +51,7 @@ public class Login extends javax.swing.JDialog {
         txt_password = new javax.swing.JTextField();
         txt_username = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
+        lbl_message = new javax.swing.JLabel();
 
         setTitle("Log - in");
         setUndecorated(true);
@@ -97,6 +98,10 @@ public class Login extends javax.swing.JDialog {
         });
         jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 90, 40));
 
+        lbl_message.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbl_message.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lbl_message, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 34, 230, 30));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 270));
 
         setSize(new java.awt.Dimension(406, 252));
@@ -113,7 +118,7 @@ public class Login extends javax.swing.JDialog {
             this.parentFrame.dispose();
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Invalid username or password");
+            this.lbl_message.setText("Invalid username or password");
         }
     }
     
@@ -174,6 +179,7 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbl_message;
     private javax.swing.JTextField txt_password;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
