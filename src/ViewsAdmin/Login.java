@@ -5,11 +5,21 @@
  */
 package ViewsAdmin;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LopezLaps
  */
 public class Login extends javax.swing.JFrame {
+
+    public String driver = "com.mysql.jdbc.Driver";
+    public Connection connection = null;
+    public PreparedStatement preparedStatement = null;
+    public ResultSet resultSet = null;
 
     /**
      * Creates new form Login
@@ -18,7 +28,7 @@ public class Login extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(Login.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
-        
+
     }
 
     /**
@@ -57,8 +67,6 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 153));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-
-        txt_password.setEnabled(false);
         jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, -1));
         jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, -1));
 
@@ -79,9 +87,18 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        new ViewsAdmin.Reports().setVisible(true);
-        dispose();
+        DataObjects.Users user = new DataObjects.Users();
+        user.setUserName(txt_username.getText());
+        user.setPassword(txt_password.getText());
+        if (user.login() == true) {
+            new ViewsAdmin.Reports().setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid username or password");
+        }
+        
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**

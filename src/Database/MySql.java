@@ -29,7 +29,7 @@ public class MySql implements DatabaseConnect {
     public MySql() {
         this.connection = this.connect();
     }
-
+  
     public Boolean insert(String tableName, Map hashMapStringAndValues) throws SQLException {
         int columnAndValueSize = hashMapStringAndValues.size();
         String columnNames = "";
@@ -98,6 +98,7 @@ public class MySql implements DatabaseConnect {
 
         return null;
     }
+    
 
     public ResultSet getAll(String tableName, String columns) {
         String sql = "SELECT " + columns + " FROM " + tableName;

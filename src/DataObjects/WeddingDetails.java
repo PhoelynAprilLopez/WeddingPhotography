@@ -43,7 +43,7 @@ public class WeddingDetails {
     private String receptionlocation = null;
     private Integer numberofguest = null;
     private String special_request_notes = null;
-
+    
     public WeddingDetails() {
         this.mysql = new MySql();
     }
@@ -243,25 +243,24 @@ public class WeddingDetails {
     public String getSpecialRequestNotes() {
         return this.special_request_notes;
     }
-
     public void logData() {
-        System.out.println("bookername :> " + this.getBookerName());
-        System.out.println("dateofwedding :> " + this.getDateOfWedding());
-        System.out.println("fullnameofthebride :> " + this.getFullnameOfTheBride());
-        System.out.println("fullnameofthegroom :> " + this.getFullnameOfTheGroom());
-        System.out.println("address :> " + this.getAddress());
-        System.out.println("city :> " + this.getCity());
-        System.out.println("contactno :> " + this.getContactNo());
-        System.out.println("gettingreadytime :> " + this.getGettingReadyTime());
-        System.out.println("gettingreadylocation :> " + this.getGettingReadyLocation());
-        System.out.println("ceremonytime :> " + this.getCeremonyTime());
-        System.out.println("ceremonylocation :> " + this.getCeremonyLocation());
-        System.out.println("photoshoottime :> " + this.getPhotoshootTime());
-        System.out.println("photoshootlocation :> " + this.getPhotoshootLocation());
-        System.out.println("receptiontime :> " + this.getReceptionTime());
-        System.out.println("receptionlocation :> " + this.getReceptionLocation());
-        System.out.println("numberofguest :> " + this.getNumberOfGuest());
-        System.out.println("special_request_notes :> " + this.getSpecialRequestNotes());
+   //     System.out.println("bookername :> " + this.getUserName());
+     //   System.out.println("dateofwedding :> " + this.getPassword());
+//        System.out.println("fullnameofthebride :> " + this.getFullnameOfTheBride());
+//        System.out.println("fullnameofthegroom :> " + this.getFullnameOfTheGroom());
+//        System.out.println("address :> " + this.getAddress());
+//        System.out.println("city :> " + this.getCity());
+//        System.out.println("contactno :> " + this.getContactNo());
+//        System.out.println("gettingreadytime :> " + this.getGettingReadyTime());
+//        System.out.println("gettingreadylocation :> " + this.getGettingReadyLocation());
+//        System.out.println("ceremonytime :> " + this.getCeremonyTime());
+//        System.out.println("ceremonylocation :> " + this.getCeremonyLocation());
+//        System.out.println("photoshoottime :> " + this.getPhotoshootTime());
+//        System.out.println("photoshootlocation :> " + this.getPhotoshootLocation());
+//        System.out.println("receptiontime :> " + this.getReceptionTime());
+//        System.out.println("receptionlocation :> " + this.getReceptionLocation());
+//        System.out.println("numberofguest :> " + this.getNumberOfGuest());
+//        System.out.println("special_request_notes :> " + this.getSpecialRequestNotes());
 
     }
 
@@ -353,7 +352,6 @@ public class WeddingDetails {
         return false;
 
     }
-
     /**
      * Method to update wedding book information or details
      *

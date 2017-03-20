@@ -160,37 +160,51 @@ public class Reports extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
         jLabel3.setText("BOOKER NAME:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 90, -1));
+
+        txt_rwdbookername.setEnabled(false);
         jPanel1.add(txt_rwdbookername, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 153));
         jLabel4.setText("DATE OF WEDDING:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 150, 30));
+
+        txt_rwddateofwedding.setEnabled(false);
         jPanel1.add(txt_rwddateofwedding, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 30));
+
+        txt_rwdfullnameofbride.setEnabled(false);
         jPanel1.add(txt_rwdfullnameofbride, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 153));
         jLabel5.setText("FULL NAME OF THE BRIDE:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 170, 30));
+
+        txt_rwdfullnameofgroom.setEnabled(false);
         jPanel1.add(txt_rwdfullnameofgroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 130, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 153));
         jLabel6.setText("FULL NAME OF THE GROOM:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, 30));
+
+        txt_rwdaddress.setEnabled(false);
         jPanel1.add(txt_rwdaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 153));
         jLabel7.setText("ADDRESS:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 100, 30));
+
+        txt_rwdcity.setEnabled(false);
         jPanel1.add(txt_rwdcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 130, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 153));
         jLabel8.setText("CITY:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 80, 30));
+
+        txt_rwdcontactnumber.setEnabled(false);
         jPanel1.add(txt_rwdcontactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -212,17 +226,31 @@ public class Reports extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 0, 153));
         jLabel11.setText("Location:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, 30));
+
+        txt_rpclocationgettingready.setEnabled(false);
         jPanel2.add(txt_rpclocationgettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 30));
+
+        txt_rpclocationceremony.setEnabled(false);
         jPanel2.add(txt_rpclocationceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
+
+        txt_rpclocationphotoshoot.setEnabled(false);
         jPanel2.add(txt_rpclocationphotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 130, 30));
+
+        txt_rpclocationreception.setEnabled(false);
         jPanel2.add(txt_rpclocationreception, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 130, 30));
+
+        txt_rpctimegettingready.setEnabled(false);
         jPanel2.add(txt_rpctimegettingready, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 153));
         jLabel15.setText("Time:");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, 30));
+
+        txt_rpctimeceremony.setEnabled(false);
         jPanel2.add(txt_rpctimeceremony, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 50, 30));
+
+        txt_rpctimephotoshoot.setEnabled(false);
         jPanel2.add(txt_rpctimephotoshoot, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 50, 30));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -239,6 +267,8 @@ public class Reports extends javax.swing.JFrame {
         jLabel36.setForeground(new java.awt.Color(255, 0, 153));
         jLabel36.setText("Location:");
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, 30));
+
+        txt_rpctimereception.setEnabled(false);
         jPanel2.add(txt_rpctimereception, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 50, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -298,9 +328,12 @@ public class Reports extends javax.swing.JFrame {
 
         ta_roispecialrequestnotes.setColumns(20);
         ta_roispecialrequestnotes.setRows(5);
+        ta_roispecialrequestnotes.setEnabled(false);
         jScrollPane2.setViewportView(ta_roispecialrequestnotes);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 310, 100));
+
+        txt_roinumberofguest.setEnabled(false);
         jPanel4.add(txt_roinumberofguest, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 130, 30));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 460, 250));
@@ -416,8 +449,8 @@ public class Reports extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
+      
+        this.disableTextField();
     }//GEN-LAST:event_table_userMouseClicked
 
     private DataObjects.WeddingDetails getBookingInformation() {
@@ -447,6 +480,48 @@ public class Reports extends javax.swing.JFrame {
         return wedDetails;
     }
 
+    public void disableTextField() {
+        this.txt_rwdbookername.setEnabled(true);
+        this.txt_rwddateofwedding.setEnabled(true);
+        this.txt_rwdfullnameofbride.setEnabled(true);
+        this.txt_rwdfullnameofgroom.setEnabled(true);
+        this.txt_rwdaddress.setEnabled(true);
+        this.txt_rwdcity.setEnabled(true);
+        this.txt_rwdcontactnumber.setEnabled(true);
+        
+        this.txt_rpctimegettingready.setEnabled(true);
+        this.txt_rpclocationgettingready.setEnabled(true);
+        this.txt_rpctimeceremony.setEnabled(true);
+        this.txt_rpclocationceremony.setEnabled(true);
+        this.txt_rpctimephotoshoot.setEnabled(true);
+        this.txt_rpclocationphotoshoot.setEnabled(true);
+        this.txt_rpctimereception.setEnabled(true);
+        this.txt_rpclocationreception.setEnabled(true);
+        
+        this.txt_roinumberofguest.setEnabled(true);
+        this.ta_roispecialrequestnotes.setEnabled(true);
+    }
+    public void clearTextField() {
+        this.txt_rwdbookername.setText("");
+        this.txt_rwddateofwedding.setText("");
+        this.txt_rwdfullnameofbride.setText("");
+        this.txt_rwdfullnameofgroom.setText("");
+        this.txt_rwdaddress.setText("");
+        this.txt_rwdcity.setText("");
+        this.txt_rwdcontactnumber.setText("");
+        
+        this.txt_rpctimegettingready.setText("");
+        this.txt_rpclocationgettingready.setText("");
+        this.txt_rpctimeceremony.setText("");
+        this.txt_rpclocationceremony.setText("");
+        this.txt_rpctimephotoshoot.setText("");
+        this.txt_rpclocationphotoshoot.setText("");
+        this.txt_rpctimereception.setText("");
+        this.txt_rpclocationreception.setText("");
+        
+        this.txt_roinumberofguest.setText("");
+        this.ta_roispecialrequestnotes.setText("");
+    }
 
     private void btn_rupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rupdateActionPerformed
         DataObjects.WeddingDetails wedDetails = this.getBookingInformation();
@@ -456,6 +531,7 @@ public class Reports extends javax.swing.JFrame {
         wedDetails.setId(id);
         if (wedDetails.update()) {
             this.showDataToWeddingBookTable();
+            this.clearTextField();
         }
 
     }//GEN-LAST:event_btn_rupdateActionPerformed

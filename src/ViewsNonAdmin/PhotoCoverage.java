@@ -319,8 +319,8 @@ public class PhotoCoverage extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
-        new ViewsAdmin.AdminsRegistration().setVisible(true);
-        dispose();
+//        new ViewsAdmin.AdminsRegistration().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_mi_registrationforadminActionPerformed
 
     private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
