@@ -5,6 +5,7 @@
  */
 package ViewsAdmin;
 
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,19 +15,23 @@ import javax.swing.JOptionPane;
  *
  * @author LopezLaps
  */
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JDialog {
 
-    public String driver = "com.mysql.jdbc.Driver";
-    public Connection connection = null;
-    public PreparedStatement preparedStatement = null;
-    public ResultSet resultSet = null;
+    private java.awt.Frame parentFrame = null;
+    /**
+     * Creates new form NewJDialog
+     */
+    public Login(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        this.parentFrame = parent;
+        initComponents();
+    }
 
     /**
      * Creates new form Login
      */
     public Login() {
         Themes.Theme.renderAluminium(Login.class.getName());
-        Themes.Theme.setIcon(this);
         initComponents();
 
     }
@@ -47,7 +52,6 @@ public class Login extends javax.swing.JFrame {
         txt_username = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log - in");
         setUndecorated(true);
         setResizable(false);
@@ -67,7 +71,19 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 0, 153));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+
+        txt_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_passwordKeyPressed(evt);
+            }
+        });
         jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, -1));
+
+        txt_username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_usernameKeyPressed(evt);
+            }
+        });
         jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, -1));
 
         btn_login.setBackground(new java.awt.Color(255, 0, 153));
@@ -88,18 +104,35 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+    private void userLogin(){
         DataObjects.Users user = new DataObjects.Users();
         user.setUserName(txt_username.getText());
         user.setPassword(txt_password.getText());
         if (user.login() == true) {
             new ViewsAdmin.Reports().setVisible(true);
+            this.parentFrame.dispose();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid username or password");
         }
-        
+    }
+    
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        this.userLogin();
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void txt_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usernameKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.userLogin();
+           
+        }
+    }//GEN-LAST:event_txt_usernameKeyPressed
+
+    private void txt_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_passwordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.userLogin();
+        }
+    }//GEN-LAST:event_txt_passwordKeyPressed
 
     /**
      * @param args the command line arguments

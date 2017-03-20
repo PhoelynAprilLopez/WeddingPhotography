@@ -5,12 +5,8 @@
  */
 package Views;
 
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import oracle.jrockit.jfr.JFR;
 
 /**
  *
@@ -148,8 +144,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBookNowActionPerformed
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        new ViewsAdmin.Login().setVisible(true);
-        //dispose();
+
+        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+        login.setVisible(true);
+
     }//GEN-LAST:event_jMenu5MouseClicked
 
     /**

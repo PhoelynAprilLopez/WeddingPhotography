@@ -407,7 +407,6 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_goActionPerformed
 
     private void txt_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyPressed
-        // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.searchAndShowDataToWeddingBookTable();
         }
@@ -449,7 +448,7 @@ public class Reports extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
+
         this.disableTextField();
     }//GEN-LAST:event_table_userMouseClicked
 
@@ -488,7 +487,7 @@ public class Reports extends javax.swing.JFrame {
         this.txt_rwdaddress.setEnabled(true);
         this.txt_rwdcity.setEnabled(true);
         this.txt_rwdcontactnumber.setEnabled(true);
-        
+
         this.txt_rpctimegettingready.setEnabled(true);
         this.txt_rpclocationgettingready.setEnabled(true);
         this.txt_rpctimeceremony.setEnabled(true);
@@ -497,10 +496,11 @@ public class Reports extends javax.swing.JFrame {
         this.txt_rpclocationphotoshoot.setEnabled(true);
         this.txt_rpctimereception.setEnabled(true);
         this.txt_rpclocationreception.setEnabled(true);
-        
+
         this.txt_roinumberofguest.setEnabled(true);
         this.ta_roispecialrequestnotes.setEnabled(true);
     }
+
     public void clearTextField() {
         this.txt_rwdbookername.setText("");
         this.txt_rwddateofwedding.setText("");
@@ -509,7 +509,7 @@ public class Reports extends javax.swing.JFrame {
         this.txt_rwdaddress.setText("");
         this.txt_rwdcity.setText("");
         this.txt_rwdcontactnumber.setText("");
-        
+
         this.txt_rpctimegettingready.setText("");
         this.txt_rpclocationgettingready.setText("");
         this.txt_rpctimeceremony.setText("");
@@ -518,7 +518,7 @@ public class Reports extends javax.swing.JFrame {
         this.txt_rpclocationphotoshoot.setText("");
         this.txt_rpctimereception.setText("");
         this.txt_rpclocationreception.setText("");
-        
+
         this.txt_roinumberofguest.setText("");
         this.ta_roispecialrequestnotes.setText("");
     }
