@@ -6,6 +6,7 @@
 package ViewsNonAdmin;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import ViewsNonAdmin.WeddingDetails;
 
 /**
  *
@@ -170,14 +171,15 @@ public class OtherInfo extends javax.swing.JFrame {
     public DataObjects.WeddingDetails getOtherInformation(){
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
         
-        wedDetails.setNumberOfGuest(Integer.parseInt(this.txt_numberofguest.getText()));
+        wedDetails.setNumberOfGuest(this.txt_numberofguest.getText());
         wedDetails.setSpecialRequestNotes(this.ta_specialrequestnotes.getText());
         wedDetails.save();
         return wedDetails;
     }
     
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-         getOtherInformation();
+        getOtherInformation();
+        ViewsNonAdmin.WeddingDetails.weddingDetails = null;
         new Views.Home().setVisible(true);
         dispose();
         

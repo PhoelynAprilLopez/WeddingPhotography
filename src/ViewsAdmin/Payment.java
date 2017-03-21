@@ -5,20 +5,33 @@
  */
 package ViewsAdmin;
 
-import javax.swing.ButtonGroup;
 
+import javax.swing.ButtonGroup;
 /**
  *
  * @author LopezLaps
  */
-public class Payment extends javax.swing.JFrame {
+public class Payment extends javax.swing.JDialog {
 
+    private java.awt.Frame parentFrame = null;
     /**
      * Creates new form Payment
      */
-    public Payment() {
+    /**
+     * Creates new form NewJDialog
+     * @param parent
+     * @param modal
+     */
+    public Payment(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        this.parentFrame = parent;
         initComponents();
-        Themes.Theme.setIcon(this);
+    }
+    public Payment() {
+        
+        Themes.Theme.renderAluminium(Payment.class.getName());
+        //Themes.Theme.setIcon(this);
+        initComponents();
         bg();
     }
 
@@ -54,9 +67,9 @@ public class Payment extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Payment\n");
         setResizable(false);
-        setType(java.awt.Window.Type.POPUP);
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -151,6 +164,8 @@ public class Payment extends javax.swing.JFrame {
         jPanel1.add(txt_change, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 200, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 400));
+
+        getAccessibleContext().setAccessibleName("Payment");
 
         setSize(new java.awt.Dimension(426, 485));
         setLocationRelativeTo(null);

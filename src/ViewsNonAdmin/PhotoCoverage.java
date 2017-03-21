@@ -291,7 +291,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(885, 626));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
 
         this.getPhotoCoverage();

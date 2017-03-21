@@ -40,7 +40,7 @@ public class WeddingDetails {
     private String photoshootlocation = null;
     private String receptiontime = null;
     private String receptionlocation = null;
-    private Integer numberofguest = null;
+    private String numberofguest = null;
     private String special_request_notes = null;
     
     public WeddingDetails() {
@@ -227,11 +227,11 @@ public class WeddingDetails {
         return this.receptionlocation;
     }
 
-    public void setNumberOfGuest(Integer numberofguest) {
+    public void setNumberOfGuest(String numberofguest) {
         this.numberofguest = numberofguest;
     }
 
-    public Integer getNumberOfGuest() {
+    public String getNumberOfGuest() {
         return this.numberofguest;
     }
 
@@ -366,5 +366,4 @@ public class WeddingDetails {
         }
         return null;
     }
-
 }

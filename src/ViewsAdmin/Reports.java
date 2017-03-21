@@ -18,6 +18,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import net.proteanit.sql.DbUtils;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 
 /**
  *
@@ -29,7 +32,6 @@ public class Reports extends javax.swing.JFrame {
     public Connection connection = null;
     public PreparedStatement preparedStatement = null;
     public ResultSet resultSet = null;
-
     /**
      * Creates new form Reports
      */
@@ -376,14 +378,15 @@ public class Reports extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
-        new ViewsAdmin.Payment().setVisible(true);
-        //dispose();
-    }//GEN-LAST:event_btn_rpaymentActionPerformed
-
+    public void frameClose() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }
+    
     private void btn_rbacktohomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rbacktohomeActionPerformed
         new Views.Home().setVisible(true);
-        dispose();
+        //dispose();
     }//GEN-LAST:event_btn_rbacktohomeActionPerformed
 
     private void showDataToWeddingBookTable() {
@@ -472,7 +475,7 @@ public class Reports extends javax.swing.JFrame {
         wedDetails.setReceptionTime(txt_rpctimereception.getText());
         wedDetails.setReceptionLocation(txt_rpclocationreception.getText());
 
-        wedDetails.setNumberOfGuest(Integer.parseInt(txt_roinumberofguest.getText()));
+        wedDetails.setNumberOfGuest(txt_roinumberofguest.getText());
         wedDetails.setSpecialRequestNotes(ta_roispecialrequestnotes.getText());
 
         //DataObjects.WeddingDetails.save(wedDetails);
@@ -535,6 +538,13 @@ public class Reports extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btn_rupdateActionPerformed
+
+    private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
+        //        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+          //      login.setVisible(true);
+        ViewsAdmin.Payment payment = new ViewsAdmin.Payment(this, true);
+        payment.setVisible(true);
+    }//GEN-LAST:event_btn_rpaymentActionPerformed
 
     /**
      * @param args the command line arguments

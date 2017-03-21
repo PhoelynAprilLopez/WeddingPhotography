@@ -102,7 +102,7 @@ public class Login extends javax.swing.JDialog {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 270));
 
-        setSize(new java.awt.Dimension(406, 252));
+        setSize(new java.awt.Dimension(406, 292));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
