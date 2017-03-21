@@ -147,7 +147,7 @@ public class Home extends javax.swing.JFrame {
 
         ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
         login.setVisible(true);
-
+         //new ViewsAdmin.Login().setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
 
     /**

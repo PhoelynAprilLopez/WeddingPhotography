@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -19,37 +21,43 @@ public class PhotoCoverage extends javax.swing.JFrame {
         Themes.Theme.setIcon(this);
         initComponents();
     }
-    
-    private DataObjects.WeddingDetails getPhotoCoverage(){
-        DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
-        
-        wedDetails.setGettingReadyTime(txt_gettingreadytime.getText());
-        wedDetails.setGettingReadyLocation(txt_gettingreadylocation.getText());
-        wedDetails.setCeremonyTime(txt_ceremonytime.getText());
-        wedDetails.setCeremonyLocation(txt_ceremonylocation.getText());
-        wedDetails.setPhotoshootTime(txt_photoshoottime.getText());
-        wedDetails.setPhotoshootLocation(txt_photoshootlocation.getText());
-        wedDetails.setReceptionTime(txt_receptiontime.getText());
-        wedDetails.setReceptionLocation(txt_receptionlocation.getText());
-        return wedDetails;
+ 
+    public void frameClose() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
     
-    private void setPhotoCoverageFormDetails(){
-        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
-            
-           DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
-            
-            txt_gettingreadytime.setText(wedDetails.getGettingReadyTime());
-            txt_gettingreadylocation.setText(wedDetails.getReceptionLocation());
-            
-            txt_ceremonytime.setText(wedDetails.getCeremonyTime());
-            txt_ceremonylocation.setText(wedDetails.getCeremonyLocation());
-            
-            txt_photoshoottime.setText(wedDetails.getPhotoshootTime());
-            txt_photoshootlocation.setText(wedDetails.getPhotoshootLocation());
-            
-            txt_receptiontime.setText(wedDetails.getReceptionTime());
-            txt_receptionlocation.setText(wedDetails.getReceptionLocation());
+    private DataObjects.WeddingDetails getPhotoCoverage() {
+        DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+
+        wedDetails.setGettingReadyTime(this.txt_gettingreadytime.getText());
+        wedDetails.setGettingReadyLocation(this.txt_gettingreadylocation.getText());
+        wedDetails.setCeremonyTime(this.txt_ceremonytime.getText());
+        wedDetails.setCeremonyLocation(this.txt_ceremonylocation.getText());
+        wedDetails.setPhotoshootTime(this.txt_photoshoottime.getText());
+        wedDetails.setPhotoshootLocation(this.txt_photoshootlocation.getText());
+        wedDetails.setReceptionTime(this.txt_receptiontime.getText());
+        wedDetails.setReceptionLocation(this.txt_receptionlocation.getText());
+        return wedDetails;
+    }
+
+    private void setPhotoCoverageFormDetails() {
+        if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
+
+            DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
+
+            this.txt_gettingreadytime.setText(wedDetails.getGettingReadyTime());
+            this.txt_gettingreadylocation.setText(wedDetails.getReceptionLocation());
+
+            this.txt_ceremonytime.setText(wedDetails.getCeremonyTime());
+            this.txt_ceremonylocation.setText(wedDetails.getCeremonyLocation());
+
+            this.txt_photoshoottime.setText(wedDetails.getPhotoshootTime());
+            this.txt_photoshootlocation.setText(wedDetails.getPhotoshootLocation());
+
+            this.txt_receptiontime.setText(wedDetails.getReceptionTime());
+            this.txt_receptionlocation.setText(wedDetails.getReceptionLocation());
         }
     }
 
@@ -93,8 +101,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        mi_registrationforadmin = new javax.swing.JMenuItem();
-        mi_adminlogin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -267,25 +273,11 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_registrationforadmin.setText("Registration for new Admin");
-        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_registrationforadminActionPerformed(evt);
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenu5MouseEntered(evt);
             }
         });
-        jMenu5.add(mi_registrationforadmin);
-
-        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_adminlogin.setText("AdminLogin");
-        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_adminloginActionPerformed(evt);
-            }
-        });
-        jMenu5.add(mi_adminlogin);
-
         jMenuBar1.add(jMenu5);
 
         jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -318,23 +310,19 @@ public class PhotoCoverage extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
 
-    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
-//        new ViewsAdmin.AdminsRegistration().setVisible(true);
-//        dispose();
-    }//GEN-LAST:event_mi_registrationforadminActionPerformed
-
-    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
-        new ViewsAdmin.Login().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_mi_adminloginActionPerformed
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
-            ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+        if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
+            //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
             this.setPhotoCoverageFormDetails();
         }
     }//GEN-LAST:event_formWindowActivated
+
+    private void jMenu5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseEntered
+         //ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+        //login.setVisible(true);
+        new ViewsAdmin.Login().setVisible(true);
+    }//GEN-LAST:event_jMenu5MouseEntered
 
     /**
      * @param args the command line arguments
@@ -396,8 +384,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl_weddingdetails;
-    private javax.swing.JMenuItem mi_adminlogin;
-    private javax.swing.JMenuItem mi_registrationforadmin;
     private javax.swing.JTextField txt_ceremonylocation;
     private javax.swing.JTextField txt_ceremonytime;
     private javax.swing.JTextField txt_gettingreadylocation;

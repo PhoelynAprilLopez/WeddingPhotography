@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 
 
 /**
@@ -22,6 +24,12 @@ public class WeddingDetails extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(WeddingDetails.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
+    }
+
+    public void frameClose() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
 
     /**
@@ -59,8 +67,6 @@ public class WeddingDetails extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        mi_registrationforadmin = new javax.swing.JMenuItem();
-        mi_adminlogin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -199,25 +205,11 @@ public class WeddingDetails extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_registrationforadmin.setText("Registration for new Admin");
-        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_registrationforadminActionPerformed(evt);
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
             }
         });
-        jMenu5.add(mi_registrationforadmin);
-
-        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_adminlogin.setText("AdminLogin");
-        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_adminloginActionPerformed(evt);
-            }
-        });
-        jMenu5.add(mi_adminlogin);
-
         jMenuBar1.add(jMenu5);
 
         jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -253,20 +245,20 @@ public class WeddingDetails extends javax.swing.JFrame {
         if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
             DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
             
-            txt_bookername.setText(wedDetails.getBookerName());
-            txt_dateofwedding.setText(wedDetails.getDateOfWedding());
-            txt_fullnameofbride.setText(wedDetails.getFullnameOfTheBride());
-            txt_fullnameofgroom.setText(wedDetails.getFullnameOfTheGroom());
-            txt_address.setText(wedDetails.getAddress());
-            txt_city.setText(wedDetails.getCity());
-            txt_contactnumber.setText(wedDetails.getContactNo());
+            this.txt_bookername.setText(wedDetails.getBookerName());
+            this.txt_dateofwedding.setText(wedDetails.getDateOfWedding());
+            this.txt_fullnameofbride.setText(wedDetails.getFullnameOfTheBride());
+            this.txt_fullnameofgroom.setText(wedDetails.getFullnameOfTheGroom());
+            this.txt_address.setText(wedDetails.getAddress());
+            this.txt_city.setText(wedDetails.getCity());
+            this.txt_contactnumber.setText(wedDetails.getContactNo());
         }
     }
     
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
         //GetWeddingDetails();
         this.getWeddingDetails();
-        ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+        //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
 
@@ -277,24 +269,19 @@ public class WeddingDetails extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
 
-    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
-//        new ViewsAdmin.AdminsRegistration().setVisible(true);
-//        dispose();
-    }//GEN-LAST:event_mi_registrationforadminActionPerformed
-
-    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
-        new ViewsAdmin.Login().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_mi_adminloginActionPerformed
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
-            ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+            //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
             this.setFormWeddingDetails();
         }
         
     }//GEN-LAST:event_formWindowActivated
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+       ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -337,8 +324,6 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JMenuItem mi_adminlogin;
-    private javax.swing.JMenuItem mi_registrationforadmin;
     private javax.swing.JTextField txt_address;
     private javax.swing.JTextField txt_bookername;
     private javax.swing.JTextField txt_city;

@@ -6,10 +6,6 @@
 package ViewsAdmin;
 
 import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +16,8 @@ public class Login extends javax.swing.JDialog {
     private java.awt.Frame parentFrame = null;
     /**
      * Creates new form NewJDialog
+     * @param parent
+     * @param modal
      */
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -111,8 +109,8 @@ public class Login extends javax.swing.JDialog {
 
     private void userLogin(){
         DataObjects.Users user = new DataObjects.Users();
-        user.setUserName(txt_username.getText());
-        user.setPassword(txt_password.getText());
+        user.setUserName(this.txt_username.getText());
+        user.setPassword(this.txt_password.getText());
         if (user.login() == true) {
             new ViewsAdmin.Reports().setVisible(true);
             this.parentFrame.dispose();

@@ -34,7 +34,7 @@ public class MySql implements DatabaseConnect {
         int columnAndValueSize = hashMapStringAndValues.size();
         String columnNames = "";
         String positionalChars = "";
-
+        
         for (Object key : hashMapStringAndValues.keySet()) {
             columnNames += key + ",";
             positionalChars += "?,";

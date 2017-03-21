@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
-import DataObjects.WeddingDetails;
-import ViewsAdmin.Reports;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author LopezLaps
@@ -21,6 +22,11 @@ public class OtherInfo extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void frameClose() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,8 +53,6 @@ public class OtherInfo extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        mi_registrationforadmin = new javax.swing.JMenuItem();
-        mi_adminlogin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -143,25 +147,11 @@ public class OtherInfo extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        mi_registrationforadmin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_registrationforadmin.setText("Registration for new Admin");
-        mi_registrationforadmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_registrationforadminActionPerformed(evt);
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
             }
         });
-        jMenu5.add(mi_registrationforadmin);
-
-        mi_adminlogin.setForeground(new java.awt.Color(255, 0, 153));
-        mi_adminlogin.setText("AdminLogin");
-        mi_adminlogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_adminloginActionPerformed(evt);
-            }
-        });
-        jMenu5.add(mi_adminlogin);
-
         jMenuBar1.add(jMenu5);
 
         jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -180,15 +170,14 @@ public class OtherInfo extends javax.swing.JFrame {
     public DataObjects.WeddingDetails getOtherInformation(){
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
         
-        wedDetails.setNumberOfGuest(Integer.parseInt(txt_numberofguest.getText()));
-        wedDetails.setSpecialRequestNotes(ta_specialrequestnotes.getText());
+        wedDetails.setNumberOfGuest(Integer.parseInt(this.txt_numberofguest.getText()));
+        wedDetails.setSpecialRequestNotes(this.ta_specialrequestnotes.getText());
         wedDetails.save();
         return wedDetails;
     }
     
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
- 
-        getOtherInformation();
+         getOtherInformation();
         new Views.Home().setVisible(true);
         dispose();
         
@@ -204,15 +193,11 @@ public class OtherInfo extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
 
-    private void mi_registrationforadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_registrationforadminActionPerformed
-//        new ViewsAdmin.AdminsRegistration().setVisible(true);
-//        dispose();
-    }//GEN-LAST:event_mi_registrationforadminActionPerformed
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu5MouseClicked
 
-    private void mi_adminloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_adminloginActionPerformed
-        new ViewsAdmin.Login().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_mi_adminloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,8 +251,6 @@ public class OtherInfo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_photocoverage;
-    private javax.swing.JMenuItem mi_adminlogin;
-    private javax.swing.JMenuItem mi_registrationforadmin;
     private javax.swing.JTextArea ta_specialrequestnotes;
     private javax.swing.JTextField txt_numberofguest;
     // End of variables declaration//GEN-END:variables

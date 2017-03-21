@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -75,9 +75,7 @@ public class Users {
 
     public Boolean login() {
         try {
-
-            
-            String sql = "SELECT * FROM "+tablename+" WHERE username = '" + this.getUserName() + "' AND password = '" + this.getPassword() + "'";
+            String sql = "SELECT * FROM "+this.tablename+" WHERE username = '" + this.getUserName() + "' AND password = '" + this.getPassword() + "'";
             System.out.println(sql);
             mysql.preparedStatement = mysql.connection.prepareStatement(sql);
             mysql.resultSet = mysql.preparedStatement.executeQuery();

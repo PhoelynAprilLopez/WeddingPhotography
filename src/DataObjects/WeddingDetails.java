@@ -15,7 +15,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author LopezLaps
@@ -49,13 +48,13 @@ public class WeddingDetails {
     }
 
     public ResultSet getAll() {
-        return mysql.getAll(this.tableName);
+        return this.mysql.getAll(this.tableName);
     }
 
     public ResultSet getWeddingDetailsById(String id) {
         String sql = "SELECT * FROM `" + this.tableName + "` WHERE id = '" + id + "' ";
         System.out.println(sql);
-        return mysql.getDataBySql(sql);
+        return this.mysql.getDataBySql(sql);
     }
 
     public ResultSet getBookerBrideAndGroom() {
@@ -66,7 +65,7 @@ public class WeddingDetails {
                 + "fullnameofthegroom AS 'Name of Groom' FROM  " + this.tableName;
 
         System.out.println(sql);
-        return mysql.getDataBySql(sql);
+        return this.mysql.getDataBySql(sql);
     }
 
     public ResultSet getBookerBrideAndGroom(String searchKeyWords) {

@@ -5,7 +5,7 @@
  */
 package ViewsAdmin;
 
-
+import javax.swing.ButtonGroup;
 
 /**
  *
@@ -19,7 +19,7 @@ public class Payment extends javax.swing.JFrame {
     public Payment() {
         initComponents();
         Themes.Theme.setIcon(this);
-        
+        bg();
     }
 
     /**
@@ -32,18 +32,27 @@ public class Payment extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_bpaymentcancel = new javax.swing.JButton();
         btn_bpaymentdone = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txt_totalamount = new javax.swing.JTextField();
+        txt_amountdeposit = new javax.swing.JTextField();
         rb_fullpayment = new javax.swing.JRadioButton();
         rb_deposit = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
+        txt_balance = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_paidamount = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_amounttender = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         txt_change = new javax.swing.JTextField();
 
         jRadioButton2.setText("jRadioButton2");
+
+        jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,7 +72,7 @@ public class Payment extends javax.swing.JFrame {
         btn_bpaymentcancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_bpaymentcancel.setForeground(new java.awt.Color(255, 255, 255));
         btn_bpaymentcancel.setText("CANCEL");
-        jPanel1.add(btn_bpaymentcancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 110, 30));
+        jPanel1.add(btn_bpaymentcancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 110, 30));
 
         btn_bpaymentdone.setBackground(new java.awt.Color(255, 0, 153));
         btn_bpaymentdone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -74,33 +83,76 @@ public class Payment extends javax.swing.JFrame {
                 btn_bpaymentdoneActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_bpaymentdone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 100, 30));
+        jPanel1.add(btn_bpaymentdone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 100, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 153));
-        jLabel1.setText("Total Amount:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-        jPanel1.add(txt_totalamount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 200, 30));
+        jLabel1.setText("Amount Deposit:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 100, 100, -1));
+
+        txt_amountdeposit.setBackground(new java.awt.Color(240, 240, 240));
+        txt_amountdeposit.setEnabled(false);
+        jPanel1.add(txt_amountdeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 200, 30));
 
         rb_fullpayment.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         rb_fullpayment.setForeground(new java.awt.Color(255, 0, 153));
         rb_fullpayment.setText("FULLPAYMENT");
+        rb_fullpayment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_fullpaymentMouseClicked(evt);
+            }
+        });
         jPanel1.add(rb_fullpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         rb_deposit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         rb_deposit.setForeground(new java.awt.Color(255, 0, 153));
         rb_deposit.setText("DEPOSIT");
+        rb_deposit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_depositMouseClicked(evt);
+            }
+        });
         jPanel1.add(rb_deposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 153));
-        jLabel3.setText("CHANGE:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
-        jPanel1.add(txt_change, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 30));
+        jLabel3.setText("Balance:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 150, 60, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 250));
+        txt_balance.setBackground(new java.awt.Color(240, 240, 240));
+        txt_balance.setEnabled(false);
+        jPanel1.add(txt_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 30));
 
-        setSize(new java.awt.Dimension(426, 322));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel4.setText("Paid Amount:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 200, 80, -1));
+
+        txt_paidamount.setBackground(new java.awt.Color(240, 240, 240));
+        txt_paidamount.setEnabled(false);
+        jPanel1.add(txt_paidamount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 200, 30));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel5.setText("Amount Tender:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 250, 100, -1));
+
+        txt_amounttender.setBackground(new java.awt.Color(240, 240, 240));
+        txt_amounttender.setEnabled(false);
+        jPanel1.add(txt_amounttender, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 200, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel6.setText("CHANGE:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        txt_change.setBackground(new java.awt.Color(240, 240, 240));
+        txt_change.setEnabled(false);
+        jPanel1.add(txt_change, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 200, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 400));
+
+        setSize(new java.awt.Dimension(426, 485));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,6 +160,36 @@ public class Payment extends javax.swing.JFrame {
         new ViewsAdmin.Reports().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_bpaymentdoneActionPerformed
+
+    private void bg() {
+        ButtonGroup a = new ButtonGroup();
+
+        a.add(rb_deposit);
+        a.add(rb_fullpayment);
+    }
+
+    public void setKindOfPayment() {
+
+        if (rb_deposit.isSelected()) {
+            this.txt_amountdeposit.setEnabled(true);
+            this.txt_balance.setEnabled(true);
+            this.txt_paidamount.setEnabled(true);
+            this.txt_amounttender.setEnabled(true);
+            this.txt_change.setEnabled(true);
+        } else if (rb_fullpayment.isSelected()){
+            this.txt_paidamount.setEnabled(true);
+            this.txt_amounttender.setEnabled(true);
+            this.txt_change.setEnabled(true);
+        }else{
+        }
+    }
+    private void rb_depositMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_depositMouseClicked
+        this.setKindOfPayment();
+    }//GEN-LAST:event_rb_depositMouseClicked
+
+    private void rb_fullpaymentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_fullpaymentMouseClicked
+        this.setKindOfPayment();
+    }//GEN-LAST:event_rb_fullpaymentMouseClicked
 
     /**
      * @param args the command line arguments
@@ -150,11 +232,18 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton rb_deposit;
     private javax.swing.JRadioButton rb_fullpayment;
+    private javax.swing.JTextField txt_amountdeposit;
+    private javax.swing.JTextField txt_amounttender;
+    private javax.swing.JTextField txt_balance;
     private javax.swing.JTextField txt_change;
-    private javax.swing.JTextField txt_totalamount;
+    private javax.swing.JTextField txt_paidamount;
     // End of variables declaration//GEN-END:variables
 }
