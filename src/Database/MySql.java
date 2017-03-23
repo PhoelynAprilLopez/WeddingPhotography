@@ -57,7 +57,7 @@ public class MySql implements DatabaseConnect {
 
         System.out.println("Column Name Size :> " + columnAndValueSize);
         System.out.println("Created Insert Sql Command :> " + sql);
-        return this.preparedStatement.execute();
+        return this.preparedStatement.executeUpdate()>= 1;
     }
 
     public Boolean update(String tableName, Map hashMapStringAndValues, String id) throws SQLException {

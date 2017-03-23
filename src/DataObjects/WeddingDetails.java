@@ -42,7 +42,7 @@ public class WeddingDetails {
     private String receptionlocation = null;
     private String numberofguest = null;
     private String special_request_notes = null;
-    
+    private String status = null;
     public WeddingDetails() {
         this.mysql = new MySql();
     }
@@ -242,6 +242,15 @@ public class WeddingDetails {
     public String getSpecialRequestNotes() {
         return this.special_request_notes;
     }
+    
+    public void setStatus(String status) {
+
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
     public void logData() {
    //     System.out.println("bookername :> " + this.getUserName());
      //   System.out.println("dateofwedding :> " + this.getPassword());
@@ -325,6 +334,9 @@ public class WeddingDetails {
             weddingHashMap.put("special_request_notes", this.getSpecialRequestNotes());
         }
         
+        if (this.getStatus() != null){
+            weddingHashMap.put("status", this.getStatus());
+        }
         return weddingHashMap;
     }
     /**

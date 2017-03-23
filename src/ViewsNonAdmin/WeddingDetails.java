@@ -189,7 +189,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, 10));
 
-        jMenu2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu2.setBorder(null);
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
         jMenu2.setText("HOME");
         jMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -201,7 +201,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu5.setBorder(null);
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -212,7 +212,7 @@ public class WeddingDetails extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu5);
 
-        jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu4.setBorder(null);
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

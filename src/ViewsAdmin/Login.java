@@ -46,10 +46,10 @@ public class Login extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txt_password = new javax.swing.JTextField();
         txt_username = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
         lbl_message = new javax.swing.JLabel();
+        txt_password = new javax.swing.JPasswordField();
 
         setTitle("Log - in");
         setUndecorated(true);
@@ -70,13 +70,6 @@ public class Login extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(255, 0, 153));
         jLabel2.setText("Password:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-
-        txt_password.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_passwordKeyPressed(evt);
-            }
-        });
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, -1));
 
         txt_username.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -100,9 +93,16 @@ public class Login extends javax.swing.JDialog {
         lbl_message.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(lbl_message, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 34, 230, 30));
 
+        txt_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_passwordKeyPressed(evt);
+            }
+        });
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 270));
 
-        setSize(new java.awt.Dimension(406, 292));
+        setSize(new java.awt.Dimension(406, 261));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,7 +111,7 @@ public class Login extends javax.swing.JDialog {
         DataObjects.Users user = new DataObjects.Users();
         user.setUserName(this.txt_username.getText());
         user.setPassword(this.txt_password.getText());
-        if (user.login() == true) {
+    if (user.login() == true) {
             new ViewsAdmin.Reports().setVisible(true);
             this.parentFrame.dispose();
             this.dispose();
@@ -178,7 +178,7 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_message;
-    private javax.swing.JTextField txt_password;
+    private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }

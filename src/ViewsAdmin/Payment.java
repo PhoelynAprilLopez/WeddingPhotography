@@ -6,6 +6,7 @@
 package ViewsAdmin;
 
 
+import java.awt.Color;
 import javax.swing.ButtonGroup;
 /**
  *
@@ -14,6 +15,12 @@ import javax.swing.ButtonGroup;
 public class Payment extends javax.swing.JDialog {
 
     private java.awt.Frame parentFrame = null;
+    
+    private DataObjects.WeddingDetails weddingDetails = null;
+    
+    public void setWeddingDetails(DataObjects.WeddingDetails weddingdetails){
+        this.weddingDetails = weddingdetails;
+    }
     /**
      * Creates new form Payment
      */
@@ -27,12 +34,14 @@ public class Payment extends javax.swing.JDialog {
         this.parentFrame = parent;
         initComponents();
     }
+    
+    
     public Payment() {
         
         Themes.Theme.renderAluminium(Payment.class.getName());
         //Themes.Theme.setIcon(this);
         initComponents();
-        bg();
+        
     }
 
     /**
@@ -50,11 +59,11 @@ public class Payment extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         btn_bpaymentcancel = new javax.swing.JButton();
         btn_bpaymentdone = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_amountdeposit = new javax.swing.JLabel();
         txt_amountdeposit = new javax.swing.JTextField();
         rb_fullpayment = new javax.swing.JRadioButton();
         rb_deposit = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_balance = new javax.swing.JLabel();
         txt_balance = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txt_paidamount = new javax.swing.JTextField();
@@ -98,10 +107,10 @@ public class Payment extends javax.swing.JDialog {
         });
         jPanel1.add(btn_bpaymentdone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 100, 30));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
-        jLabel1.setText("Amount Deposit:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 100, 100, -1));
+        lbl_amountdeposit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbl_amountdeposit.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_amountdeposit.setText("Amount Deposit:");
+        jPanel1.add(lbl_amountdeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 100, 100, -1));
 
         txt_amountdeposit.setBackground(new java.awt.Color(240, 240, 240));
         txt_amountdeposit.setEnabled(false);
@@ -127,10 +136,10 @@ public class Payment extends javax.swing.JDialog {
         });
         jPanel1.add(rb_deposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 153));
-        jLabel3.setText("Balance:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 150, 60, -1));
+        lbl_balance.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbl_balance.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_balance.setText("Balance:");
+        jPanel1.add(lbl_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 150, 60, -1));
 
         txt_balance.setBackground(new java.awt.Color(240, 240, 240));
         txt_balance.setEnabled(false);
@@ -172,31 +181,41 @@ public class Payment extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_bpaymentdoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bpaymentdoneActionPerformed
-        new ViewsAdmin.Reports().setVisible(true);
+        this.setKindOfPayment();
+        //new ViewsAdmin.Reports().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_bpaymentdoneActionPerformed
 
-    private void bg() {
+    public void setKindOfPayment() {
         ButtonGroup a = new ButtonGroup();
-
         a.add(rb_deposit);
         a.add(rb_fullpayment);
-    }
-
-    public void setKindOfPayment() {
-
+        
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        
         if (rb_deposit.isSelected()) {
+            this.lbl_amountdeposit.setForeground(new java.awt.Color(255, 0, 153));
+            this.lbl_balance.setForeground(new java.awt.Color(255, 0, 153));
             this.txt_amountdeposit.setEnabled(true);
             this.txt_balance.setEnabled(true);
             this.txt_paidamount.setEnabled(true);
             this.txt_amounttender.setEnabled(true);
             this.txt_change.setEnabled(true);
+            this.weddingDetails.setStatus(Constants.WeddingDetailsStatus.DEPOSIT);
+            
         } else if (rb_fullpayment.isSelected()){
+            this.lbl_amountdeposit.setForeground(Color.gray);
+            this.lbl_balance.setForeground(Color.gray);
+            this.txt_amountdeposit.setEnabled(false);
+            this.txt_balance.setEnabled(false);
             this.txt_paidamount.setEnabled(true);
             this.txt_amounttender.setEnabled(true);
             this.txt_change.setEnabled(true);
-        }else{
+            this.weddingDetails.setStatus(Constants.WeddingDetailsStatus.FULLY_PAID);
         }
+        
+        this.weddingDetails.update();
+       
     }
     private void rb_depositMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_depositMouseClicked
         this.setKindOfPayment();
@@ -244,15 +263,15 @@ public class Payment extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_bpaymentcancel;
     private javax.swing.JButton btn_bpaymentdone;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel lbl_amountdeposit;
+    private javax.swing.JLabel lbl_balance;
     private javax.swing.JRadioButton rb_deposit;
     private javax.swing.JRadioButton rb_fullpayment;
     private javax.swing.JTextField txt_amountdeposit;

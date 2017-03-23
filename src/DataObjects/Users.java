@@ -6,6 +6,7 @@
 package DataObjects;
 
 import Database.MySql;
+import ViewsAdmin.Payment;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -140,6 +141,10 @@ public class Users {
             Logger.getLogger(WeddingDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    public void setStatus(Payment aThis, boolean selected) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

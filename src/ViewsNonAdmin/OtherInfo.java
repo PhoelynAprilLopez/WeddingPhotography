@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
+
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import ViewsNonAdmin.WeddingDetails;
@@ -28,6 +29,7 @@ public class OtherInfo extends javax.swing.JFrame {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,7 +134,7 @@ public class OtherInfo extends javax.swing.JFrame {
         jLabel5.setText("OTHER INFORMATION");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
-        jMenu2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu2.setBorder(null);
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
         jMenu2.setText("HOME");
         jMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -144,7 +146,7 @@ public class OtherInfo extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu5.setBorder(null);
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
         jMenu5.setText("Admin");
         jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -155,7 +157,7 @@ public class OtherInfo extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu5);
 
-        jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu4.setBorder(null);
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -167,22 +169,23 @@ public class OtherInfo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public DataObjects.WeddingDetails getOtherInformation(){
+    public Boolean getOtherInformation() {
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
-        
+
         wedDetails.setNumberOfGuest(this.txt_numberofguest.getText());
         wedDetails.setSpecialRequestNotes(this.ta_specialrequestnotes.getText());
-        wedDetails.save();
-        return wedDetails;
+
+        return wedDetails.save();
     }
-    
+
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-        getOtherInformation();
-        ViewsNonAdmin.WeddingDetails.weddingDetails = null;
-        new Views.Home().setVisible(true);
-        dispose();
-        
+
+        if (this.getOtherInformation()) {
+            ViewsNonAdmin.WeddingDetails.weddingDetails = null;
+            new Views.Home().setVisible(true);
+            dispose();
+        }
+
     }//GEN-LAST:event_btn_oidoneActionPerformed
 
     private void lbl_photocoverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_photocoverageMouseClicked
@@ -199,7 +202,6 @@ public class OtherInfo extends javax.swing.JFrame {
         ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
         login.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
-
 
     /**
      * @param args the command line arguments

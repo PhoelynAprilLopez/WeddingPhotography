@@ -21,7 +21,6 @@ import net.proteanit.sql.DbUtils;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
-
 /**
  *
  * @author LopezLaps
@@ -32,6 +31,8 @@ public class Reports extends javax.swing.JFrame {
     public Connection connection = null;
     public PreparedStatement preparedStatement = null;
     public ResultSet resultSet = null;
+    public String weddingDetailsId = null;
+
     /**
      * Creates new form Reports
      */
@@ -103,6 +104,8 @@ public class Reports extends javax.swing.JFrame {
         btn_rpayment = new javax.swing.JButton();
         btn_rupdate = new javax.swing.JButton();
         btn_rbacktohome = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -133,8 +136,8 @@ public class Reports extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 20));
 
         txt_search.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_searchKeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_searchKeyReleased(evt);
             }
         });
         getContentPane().add(txt_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 210, 30));
@@ -373,17 +376,27 @@ public class Reports extends javax.swing.JFrame {
         });
         getContentPane().add(btn_rbacktohome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 80, 30));
 
-        setSize(new java.awt.Dimension(1274, 634));
+        jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jMenu3.setBackground(new java.awt.Color(153, 153, 153));
+        jMenu3.setBorder(null);
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
+        jMenu3.setText("Home");
+        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu3);
+
+        setJMenuBar(jMenuBar2);
+
+        setSize(new java.awt.Dimension(1274, 667));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
 
     public void frameClose() {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-    
+
     private void btn_rbacktohomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rbacktohomeActionPerformed
         new Views.Home().setVisible(true);
         //dispose();
@@ -408,52 +421,6 @@ public class Reports extends javax.swing.JFrame {
     private void btn_goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_goActionPerformed
         this.searchAndShowDataToWeddingBookTable();
     }//GEN-LAST:event_btn_goActionPerformed
-
-    private void txt_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.searchAndShowDataToWeddingBookTable();
-        }
-        System.out.println("Key code being press by the user :>" + evt.getKeyCode());
-    }//GEN-LAST:event_txt_searchKeyPressed
-
-    private void table_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_userMouseClicked
-
-        int row = table_user.getSelectedRow();
-        String id = (table_user.getModel().getValueAt(row, 0).toString());
-
-        System.out.println(id);
-        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
-        ResultSet rs = wedDetails.getWeddingDetailsById(id);
-
-        try {
-            if (rs.next()) {
-                this.txt_rwdbookername.setText(rs.getString("bookername"));
-                this.txt_rwddateofwedding.setText(rs.getString("dateofwedding"));
-                this.txt_rwdfullnameofbride.setText(rs.getString("fullnameofthebride"));
-                this.txt_rwdfullnameofgroom.setText(rs.getString("fullnameofthegroom"));
-                this.txt_rwdaddress.setText(rs.getString("address"));
-                this.txt_rwdcity.setText(rs.getString("city"));
-                this.txt_rwdcontactnumber.setText(rs.getString("contactno"));
-
-                this.txt_rpctimegettingready.setText(rs.getString("gettingreadytime"));
-                this.txt_rpclocationgettingready.setText(rs.getString("gettingreadylocation"));
-                this.txt_rpctimeceremony.setText(rs.getString("ceremonytime"));
-                this.txt_rpclocationceremony.setText(rs.getString("ceremonylocation"));
-                this.txt_rpctimephotoshoot.setText(rs.getString("photoshoottime"));
-                this.txt_rpclocationphotoshoot.setText(rs.getString("photoshootlocation"));
-                this.txt_rpctimereception.setText(rs.getString("receptiontime"));
-                this.txt_rpclocationreception.setText(rs.getString("receptionlocation"));
-
-                this.txt_roinumberofguest.setText(rs.getString("numberofguest"));
-                this.ta_roispecialrequestnotes.setText(rs.getString("special_request_notes"));
-
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        this.disableTextField();
-    }//GEN-LAST:event_table_userMouseClicked
 
     private DataObjects.WeddingDetails getBookingInformation() {
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
@@ -540,11 +507,58 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_rupdateActionPerformed
 
     private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
-        //        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
-          //      login.setVisible(true);
         ViewsAdmin.Payment payment = new ViewsAdmin.Payment(this, true);
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        wedDetails.setId(Integer.parseInt(this.weddingDetailsId));
+        payment.setWeddingDetails(wedDetails);
         payment.setVisible(true);
     }//GEN-LAST:event_btn_rpaymentActionPerformed
+
+    private void table_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_userMouseClicked
+        int row = table_user.getSelectedRow();
+        this.weddingDetailsId = (table_user.getModel().getValueAt(row, 0).toString());
+
+        System.out.println(this.weddingDetailsId);
+        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+        ResultSet rs = wedDetails.getWeddingDetailsById(this.weddingDetailsId );
+
+        try {
+            if (rs.next()) {
+                this.txt_rwdbookername.setText(rs.getString("bookername"));
+                this.txt_rwddateofwedding.setText(rs.getString("dateofwedding"));
+                this.txt_rwdfullnameofbride.setText(rs.getString("fullnameofthebride"));
+                this.txt_rwdfullnameofgroom.setText(rs.getString("fullnameofthegroom"));
+                this.txt_rwdaddress.setText(rs.getString("address"));
+                this.txt_rwdcity.setText(rs.getString("city"));
+                this.txt_rwdcontactnumber.setText(rs.getString("contactno"));
+
+                this.txt_rpctimegettingready.setText(rs.getString("gettingreadytime"));
+                this.txt_rpclocationgettingready.setText(rs.getString("gettingreadylocation"));
+                this.txt_rpctimeceremony.setText(rs.getString("ceremonytime"));
+                this.txt_rpclocationceremony.setText(rs.getString("ceremonylocation"));
+                this.txt_rpctimephotoshoot.setText(rs.getString("photoshoottime"));
+                this.txt_rpclocationphotoshoot.setText(rs.getString("photoshootlocation"));
+                this.txt_rpctimereception.setText(rs.getString("receptiontime"));
+                this.txt_rpclocationreception.setText(rs.getString("receptionlocation"));
+
+                this.txt_roinumberofguest.setText(rs.getString("numberofguest"));
+                this.ta_roispecialrequestnotes.setText(rs.getString("special_request_notes"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        this.disableTextField();
+    }//GEN-LAST:event_table_userMouseClicked
+
+    private void txt_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_searchKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.searchAndShowDataToWeddingBookTable();
+        }
+        System.out.println("Key code being press by the user :>" + evt.getKeyCode());
+        this.searchAndShowDataToWeddingBookTable();
+    }//GEN-LAST:event_txt_searchKeyReleased
 
     /**
      * @param args the command line arguments
@@ -612,6 +626,8 @@ public class Reports extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
