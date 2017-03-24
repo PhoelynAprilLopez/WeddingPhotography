@@ -9,10 +9,6 @@ package Constants;
  *
  * @author LopezLaps
  */
-public class WeddingDetailsStatus {
-    
-    public static java.lang.String DEPOSIT = "Deposit";
-    public static java.lang.String FULLY_PAID = "Fully Paid";
-    public static java.lang.String PENDING = "Pending";
-    
+public class StringError {
+   public static java.lang.String SElECT_BOOKING_ENTRY = "Please select a booking entry in the table above"; 
 }

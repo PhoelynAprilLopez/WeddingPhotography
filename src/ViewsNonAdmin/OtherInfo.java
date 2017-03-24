@@ -174,7 +174,7 @@ public class OtherInfo extends javax.swing.JFrame {
 
         wedDetails.setNumberOfGuest(this.txt_numberofguest.getText());
         wedDetails.setSpecialRequestNotes(this.ta_specialrequestnotes.getText());
-
+        wedDetails.setStatus(Constants.WeddingDetailsStatus.PENDING);
         return wedDetails.save();
     }
 

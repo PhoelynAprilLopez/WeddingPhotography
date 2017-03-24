@@ -27,11 +27,11 @@ import java.awt.event.WindowEvent;
  */
 public class Reports extends javax.swing.JFrame {
 
-    public String driver = "com.mysql.jdbc.Driver";
-    public Connection connection = null;
     public PreparedStatement preparedStatement = null;
     public ResultSet resultSet = null;
     public String weddingDetailsId = null;
+
+    public DataObjects.WeddingDetails weddingDetails = null;
 
     /**
      * Creates new form Reports
@@ -101,9 +101,9 @@ public class Reports extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ta_roispecialrequestnotes = new javax.swing.JTextArea();
         txt_roinumberofguest = new javax.swing.JTextField();
-        btn_rpayment = new javax.swing.JButton();
-        btn_rupdate = new javax.swing.JButton();
-        btn_rbacktohome = new javax.swing.JButton();
+        btn_update = new javax.swing.JButton();
+        btn_deposit = new javax.swing.JButton();
+        btn_fullypaid = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
 
@@ -343,38 +343,41 @@ public class Reports extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 460, 250));
 
-        btn_rpayment.setBackground(new java.awt.Color(255, 0, 153));
-        btn_rpayment.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btn_rpayment.setForeground(new java.awt.Color(255, 255, 255));
-        btn_rpayment.setText("GO TO PAYMENT");
-        btn_rpayment.addActionListener(new java.awt.event.ActionListener() {
+        btn_update.setBackground(new java.awt.Color(255, 0, 153));
+        btn_update.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_update.setText("UPDATE");
+        btn_update.setEnabled(false);
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_rpaymentActionPerformed(evt);
+                btn_updateActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_rpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 350, 40));
+        getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 350, 40));
 
-        btn_rupdate.setBackground(new java.awt.Color(255, 0, 153));
-        btn_rupdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btn_rupdate.setForeground(new java.awt.Color(255, 255, 255));
-        btn_rupdate.setText("UPDATE");
-        btn_rupdate.addActionListener(new java.awt.event.ActionListener() {
+        btn_deposit.setBackground(new java.awt.Color(255, 0, 153));
+        btn_deposit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_deposit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_deposit.setText("DEPOSIT");
+        btn_deposit.setEnabled(false);
+        btn_deposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_rupdateActionPerformed(evt);
+                btn_depositActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_rupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 80, 30));
+        getContentPane().add(btn_deposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, 120, 30));
 
-        btn_rbacktohome.setBackground(new java.awt.Color(255, 0, 153));
-        btn_rbacktohome.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btn_rbacktohome.setForeground(new java.awt.Color(255, 255, 255));
-        btn_rbacktohome.setText("HOME");
-        btn_rbacktohome.addActionListener(new java.awt.event.ActionListener() {
+        btn_fullypaid.setBackground(new java.awt.Color(255, 0, 153));
+        btn_fullypaid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_fullypaid.setForeground(new java.awt.Color(255, 255, 255));
+        btn_fullypaid.setText("FULLY PAID");
+        btn_fullypaid.setEnabled(false);
+        btn_fullypaid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_rbacktohomeActionPerformed(evt);
+                btn_fullypaidActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_rbacktohome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 80, 30));
+        getContentPane().add(btn_fullypaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 120, 30));
 
         jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -383,6 +386,11 @@ public class Reports extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
         jMenu3.setText("Home");
         jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenuBar2.add(jMenu3);
 
         setJMenuBar(jMenuBar2);
@@ -397,12 +405,23 @@ public class Reports extends javax.swing.JFrame {
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
 
-    private void btn_rbacktohomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rbacktohomeActionPerformed
-        new Views.Home().setVisible(true);
-        //dispose();
-    }//GEN-LAST:event_btn_rbacktohomeActionPerformed
+   
+    private void btn_depositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_depositActionPerformed
 
-    private void showDataToWeddingBookTable() {
+        int row = table_user.getSelectedRow();
+        Integer id = Integer.parseInt(table_user.getModel().getValueAt(row, 0).toString());
+        if (id <= 0) {
+            JOptionPane.showMessageDialog(this, Constants.StringError.SElECT_BOOKING_ENTRY);
+        } else {
+            ViewsAdmin.Payment payment = new ViewsAdmin.Payment(this, true);
+            DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+            wedDetails.getWeddingDetailsById(id.toString());
+            payment.setWeddingDetails(wedDetails);
+            payment.setVisible(true);
+        }
+    }//GEN-LAST:event_btn_depositActionPerformed
+
+    public void showDataToWeddingBookTable() {
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
         resultSet = wedDetails.getBookerBrideAndGroom();
         table_user.setModel(DbUtils.resultSetToTableModel(resultSet));
@@ -491,9 +510,35 @@ public class Reports extends javax.swing.JFrame {
 
         this.txt_roinumberofguest.setText("");
         this.ta_roispecialrequestnotes.setText("");
+
+        this.weddingDetailsId = null;
+        this.weddingDetails = null;
     }
 
-    private void btn_rupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rupdateActionPerformed
+    public void paymentButtonSetup() {
+
+        btn_fullypaid.setEnabled(false);
+        btn_deposit.setEnabled(false);
+        btn_update.setEnabled(false);
+
+        if (this.weddingDetails != null) {
+            String weddingDetailsStatus = this.weddingDetails.getStatus();
+            btn_update.setEnabled(true);
+            if (Constants.WeddingDetailsStatus.DEPOSIT.equals(weddingDetailsStatus)) {
+                btn_fullypaid.setEnabled(true);
+                btn_deposit.setEnabled(false);
+            } else if (Constants.WeddingDetailsStatus.FULLY_PAID.equals(weddingDetailsStatus)) {
+                btn_fullypaid.setEnabled(false);
+                btn_deposit.setEnabled(false);
+            } else if (Constants.WeddingDetailsStatus.PENDING.equals(weddingDetailsStatus)) {
+                btn_fullypaid.setEnabled(true);
+                btn_deposit.setEnabled(true);
+            }
+        }
+    }
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+
         DataObjects.WeddingDetails wedDetails = this.getBookingInformation();
 
         int row = table_user.getSelectedRow();
@@ -501,18 +546,12 @@ public class Reports extends javax.swing.JFrame {
         wedDetails.setId(id);
         if (wedDetails.update()) {
             this.showDataToWeddingBookTable();
+            btn_update.setEnabled(false);
             this.clearTextField();
+            this.paymentButtonSetup();
         }
 
-    }//GEN-LAST:event_btn_rupdateActionPerformed
-
-    private void btn_rpaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rpaymentActionPerformed
-        ViewsAdmin.Payment payment = new ViewsAdmin.Payment(this, true);
-        DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
-        wedDetails.setId(Integer.parseInt(this.weddingDetailsId));
-        payment.setWeddingDetails(wedDetails);
-        payment.setVisible(true);
-    }//GEN-LAST:event_btn_rpaymentActionPerformed
+    }//GEN-LAST:event_btn_updateActionPerformed
 
     private void table_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_userMouseClicked
         int row = table_user.getSelectedRow();
@@ -520,35 +559,32 @@ public class Reports extends javax.swing.JFrame {
 
         System.out.println(this.weddingDetailsId);
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
-        ResultSet rs = wedDetails.getWeddingDetailsById(this.weddingDetailsId );
+        wedDetails.getWeddingDetailsById(this.weddingDetailsId);
+        /**
+         * Set this class wedding details object to be used to the whole class
+         */
+        this.weddingDetails = wedDetails;
 
-        try {
-            if (rs.next()) {
-                this.txt_rwdbookername.setText(rs.getString("bookername"));
-                this.txt_rwddateofwedding.setText(rs.getString("dateofwedding"));
-                this.txt_rwdfullnameofbride.setText(rs.getString("fullnameofthebride"));
-                this.txt_rwdfullnameofgroom.setText(rs.getString("fullnameofthegroom"));
-                this.txt_rwdaddress.setText(rs.getString("address"));
-                this.txt_rwdcity.setText(rs.getString("city"));
-                this.txt_rwdcontactnumber.setText(rs.getString("contactno"));
+        this.txt_rwdbookername.setText(wedDetails.getBookerName());
+        this.txt_rwddateofwedding.setText(wedDetails.getDateOfWedding());
+        this.txt_rwdfullnameofbride.setText(wedDetails.getFullnameOfTheBride());
+        this.txt_rwdfullnameofgroom.setText(wedDetails.getFullnameOfTheGroom());
+        this.txt_rwdaddress.setText(wedDetails.getAddress());
+        this.txt_rwdcity.setText(wedDetails.getCity());
+        this.txt_rwdcontactnumber.setText(wedDetails.getContactNo());
+        this.txt_rpctimegettingready.setText(wedDetails.getGettingReadyTime());
+        this.txt_rpclocationgettingready.setText(wedDetails.getGettingReadyLocation());
+        this.txt_rpctimeceremony.setText(wedDetails.getCeremonyTime());
+        this.txt_rpclocationceremony.setText(wedDetails.getCeremonyLocation());
+        this.txt_rpctimephotoshoot.setText(wedDetails.getPhotoshootTime());
+        this.txt_rpclocationphotoshoot.setText(wedDetails.getPhotoshootLocation());
+        this.txt_rpctimereception.setText(wedDetails.getReceptionTime());
+        this.txt_rpclocationreception.setText(wedDetails.getReceptionLocation());
 
-                this.txt_rpctimegettingready.setText(rs.getString("gettingreadytime"));
-                this.txt_rpclocationgettingready.setText(rs.getString("gettingreadylocation"));
-                this.txt_rpctimeceremony.setText(rs.getString("ceremonytime"));
-                this.txt_rpclocationceremony.setText(rs.getString("ceremonylocation"));
-                this.txt_rpctimephotoshoot.setText(rs.getString("photoshoottime"));
-                this.txt_rpclocationphotoshoot.setText(rs.getString("photoshootlocation"));
-                this.txt_rpctimereception.setText(rs.getString("receptiontime"));
-                this.txt_rpclocationreception.setText(rs.getString("receptionlocation"));
+        this.txt_roinumberofguest.setText(wedDetails.getNumberOfGuest());
+        this.ta_roispecialrequestnotes.setText(wedDetails.getSpecialRequestNotes());
 
-                this.txt_roinumberofguest.setText(rs.getString("numberofguest"));
-                this.ta_roispecialrequestnotes.setText(rs.getString("special_request_notes"));
-
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        this.paymentButtonSetup();
         this.disableTextField();
     }//GEN-LAST:event_table_userMouseClicked
 
@@ -559,6 +595,33 @@ public class Reports extends javax.swing.JFrame {
         System.out.println("Key code being press by the user :>" + evt.getKeyCode());
         this.searchAndShowDataToWeddingBookTable();
     }//GEN-LAST:event_txt_searchKeyReleased
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        new Views.Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void btn_fullypaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fullypaidActionPerformed
+        // TODO add your handling code here:
+        int row = table_user.getSelectedRow();
+        Integer id = Integer.parseInt(table_user.getModel().getValueAt(row, 0).toString());
+        if (id <= 0) {
+            JOptionPane.showMessageDialog(this, Constants.StringError.SElECT_BOOKING_ENTRY);
+        } else {
+
+            DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
+            wedDetails.setId(id);
+            wedDetails.setStatus(Constants.WeddingDetailsStatus.FULLY_PAID);
+            wedDetails.setBalance(0.00);
+            if (wedDetails.update()) {
+                JOptionPane.showMessageDialog(this, Constants.String.PAID_DONE);
+                this.showDataToWeddingBookTable();
+                this.clearTextField();
+            }
+        }
+
+
+    }//GEN-LAST:event_btn_fullypaidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,10 +660,10 @@ public class Reports extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_deposit;
+    private javax.swing.JButton btn_fullypaid;
     private javax.swing.JButton btn_go;
-    private javax.swing.JButton btn_rbacktohome;
-    private javax.swing.JButton btn_rpayment;
-    private javax.swing.JButton btn_rupdate;
+    private javax.swing.JButton btn_update;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

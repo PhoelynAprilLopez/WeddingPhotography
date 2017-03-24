@@ -128,7 +128,7 @@ public class Home extends javax.swing.JFrame {
 
         jMenu4.setBorder(null);
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms and condition");
+        jMenu4.setText("About Us and Agreement");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu4);
 

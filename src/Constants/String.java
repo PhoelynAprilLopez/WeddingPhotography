@@ -9,10 +9,9 @@ package Constants;
  *
  * @author LopezLaps
  */
-public class WeddingDetailsStatus {
+public class String {
     
-    public static java.lang.String DEPOSIT = "Deposit";
-    public static java.lang.String FULLY_PAID = "Fully Paid";
-    public static java.lang.String PENDING = "Pending";
-    
+    public static java.lang.String SAVE = "SAVE";
+    public static java.lang.String DONE = "DONE";
+    public static java.lang.String PAID_DONE = "Paid Done!";
 }
