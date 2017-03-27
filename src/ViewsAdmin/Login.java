@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package ViewsAdmin;
-
 import java.awt.event.KeyEvent;
 
 /**
@@ -31,7 +30,6 @@ public class Login extends javax.swing.JDialog {
     public Login() {
         Themes.Theme.renderAluminium(Login.class.getName());
         initComponents();
-
     }
 
     /**
@@ -126,8 +124,7 @@ public class Login extends javax.swing.JDialog {
 
     private void txt_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usernameKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.userLogin();
-           
+            this.userLogin();           
         }
     }//GEN-LAST:event_txt_usernameKeyPressed
 
@@ -166,6 +163,7 @@ public class Login extends javax.swing.JDialog {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Login().setVisible(true);
             }

@@ -6,8 +6,6 @@
 package DataObjects;
 
 import Database.MySql;
-import static ViewsNonAdmin.WeddingDetails.weddingDetails;
-import java.awt.HeadlessException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -19,8 +17,7 @@ import java.util.logging.Logger;
  *
  * @author LopezLaps
  */
-public class WeddingDetails {
-    
+public class WeddingDetails {    
     private String tableName = "weddingdetails";
     private MySql mysql = null;
     
@@ -56,7 +53,6 @@ public class WeddingDetails {
     
     public ResultSet getWeddingDetailsById(String id) {
         String sql = "SELECT * FROM `" + this.tableName + "` WHERE id = '" + id + "' ";
-        System.out.println(sql);
         ResultSet resultSet = this.mysql.getDataBySql(sql);
         try {
             if (resultSet.next()) {
@@ -95,8 +91,6 @@ public class WeddingDetails {
                 + "contactno AS 'Contact #', "
                 + "status AS 'Status' FROM  " + this.tableName
                 + " ORDER BY ID DESC";
-        
-        System.out.println(sql);
         return this.mysql.getDataBySql(sql);
     }
     
@@ -113,7 +107,6 @@ public class WeddingDetails {
                     + "status LIKE '%" + searchKeyWords + "%'  ";
         }
         sql += " ORDER BY ID DESC";
-        System.out.println(sql);
         return mysql.getDataBySql(sql);
     }
     
@@ -301,27 +294,6 @@ public class WeddingDetails {
         return this.status;
     }
 
-    public void logData() {
-   //     System.out.println("bookername :> " + this.getUserName());
-        //   System.out.println("dateofwedding :> " + this.getPassword());
-//        System.out.println("fullnameofthebride :> " + this.getFullnameOfTheBride());
-//        System.out.println("fullnameofthegroom :> " + this.getFullnameOfTheGroom());
-//        System.out.println("address :> " + this.getAddress());
-//        System.out.println("city :> " + this.getCity());
-//        System.out.println("contactno :> " + this.getContactNo());
-//        System.out.println("gettingreadytime :> " + this.getGettingReadyTime());
-//        System.out.println("gettingreadylocation :> " + this.getGettingReadyLocation());
-//        System.out.println("ceremonytime :> " + this.getCeremonyTime());
-//        System.out.println("ceremonylocation :> " + this.getCeremonyLocation());
-//        System.out.println("photoshoottime :> " + this.getPhotoshootTime());
-//        System.out.println("photoshootlocation :> " + this.getPhotoshootLocation());
-//        System.out.println("receptiontime :> " + this.getReceptionTime());
-//        System.out.println("receptionlocation :> " + this.getReceptionLocation());
-//        System.out.println("numberofguest :> " + this.getNumberOfGuest());
-//        System.out.println("special_request_notes :> " + this.getSpecialRequestNotes());
-
-    }
-    
     public static WeddingDetails getWeddingDetails(Integer Id) {
         //Todo get database details from BookingInformation base on bookInfoId 
         return new WeddingDetails();

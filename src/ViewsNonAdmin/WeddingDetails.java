@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
+
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-
 
 /**
  *
@@ -15,11 +15,11 @@ import java.awt.event.WindowEvent;
 public class WeddingDetails extends javax.swing.JFrame {
 
     public static DataObjects.WeddingDetails weddingDetails = null;
+
     /**
      * Creates new form WeddingDetails
      */
-    
-    
+
     public WeddingDetails() {
         Themes.Theme.renderAluminium(WeddingDetails.class.getName());
         Themes.Theme.setIcon(this);
@@ -72,7 +72,9 @@ public class WeddingDetails extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Wedding Photography Booking");
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -216,6 +218,11 @@ public class WeddingDetails extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -224,12 +231,12 @@ public class WeddingDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private DataObjects.WeddingDetails getWeddingDetails(){
+    private DataObjects.WeddingDetails getWeddingDetails() {
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
-        if(WeddingDetails.weddingDetails == null){
+        if (WeddingDetails.weddingDetails == null) {
             WeddingDetails.weddingDetails = wedDetails;
         }
-        
+
         WeddingDetails.weddingDetails.setBookerName(this.txt_bookername.getText());
         WeddingDetails.weddingDetails.setDateOfWedding(this.txt_dateofwedding.getText());
         WeddingDetails.weddingDetails.setFullnameOfTheBride(this.txt_fullnameofbride.getText());
@@ -237,14 +244,14 @@ public class WeddingDetails extends javax.swing.JFrame {
         WeddingDetails.weddingDetails.setAddress(this.txt_address.getText());
         WeddingDetails.weddingDetails.setCity(this.txt_city.getText());
         WeddingDetails.weddingDetails.setContactNo(this.txt_contactnumber.getText());
-        
+
         return WeddingDetails.weddingDetails;
     }
-    
-    private void setFormWeddingDetails(){
-        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
+
+    private void setFormWeddingDetails() {
+        if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
             DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
-            
+
             this.txt_bookername.setText(wedDetails.getBookerName());
             this.txt_dateofwedding.setText(wedDetails.getDateOfWedding());
             this.txt_fullnameofbride.setText(wedDetails.getFullnameOfTheBride());
@@ -254,34 +261,35 @@ public class WeddingDetails extends javax.swing.JFrame {
             this.txt_contactnumber.setText(wedDetails.getContactNo());
         }
     }
-    
+
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
-        //GetWeddingDetails();
         this.getWeddingDetails();
-        //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
 
     }//GEN-LAST:event_btn_wdnextActionPerformed
 
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
-       new Views.Home().setVisible(true);
+        new Views.Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
-        if(ViewsNonAdmin.WeddingDetails.weddingDetails != null){
-            //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
+        if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
             this.setFormWeddingDetails();
         }
-        
+
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-       ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
+        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
         login.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        Views.Tac tac = new Views.Tac(this, true);
+        tac.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -297,6 +305,7 @@ public class WeddingDetails extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new WeddingDetails().setVisible(true);
             }

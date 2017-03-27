@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package ViewsAdmin;
-
-import java.awt.Color;
-import javax.swing.ButtonGroup;
-
 /**
  *
  * @author LopezLaps
@@ -40,7 +36,6 @@ public class Payment extends javax.swing.JDialog {
     public Payment() {
 
         Themes.Theme.renderAluminium(Payment.class.getName());
-        //Themes.Theme.setIcon(this);
         initComponents();
 
     }
@@ -123,8 +118,8 @@ public class Payment extends javax.swing.JDialog {
         lbl_balance.setText("Balance:");
         jPanel1.add(lbl_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 150, 60, -1));
 
+        txt_balance.setEditable(false);
         txt_balance.setBackground(new java.awt.Color(240, 240, 240));
-        txt_balance.setEnabled(false);
         jPanel1.add(txt_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 200, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 300));
@@ -150,14 +145,12 @@ public class Payment extends javax.swing.JDialog {
                 this.parentFrame.paymentButtonSetup();
                 dispose();
             }
-
         }
 
     }//GEN-LAST:event_btn_bpaymentdoneActionPerformed
 
     
     private void txt_amountdepositKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_amountdepositKeyPressed
-        // TODO add your handling code here:
         Double amountDeposit = 0.0;
         String strAmountDeposit = txt_amountdeposit.getText();
 
@@ -171,7 +164,6 @@ public class Payment extends javax.swing.JDialog {
     }//GEN-LAST:event_txt_amountdepositKeyPressed
 
     private void btn_bpaymentcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bpaymentcancelActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btn_bpaymentcancelActionPerformed
 
@@ -204,6 +196,7 @@ public class Payment extends javax.swing.JDialog {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Payment().setVisible(true);
             }

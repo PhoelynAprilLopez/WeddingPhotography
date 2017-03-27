@@ -4,16 +4,13 @@
  * and open the template in the editor.
  */
 package DataObjects;
-
 import Database.MySql;
-import ViewsAdmin.Payment;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 /**
  *
@@ -76,14 +73,12 @@ public class Users {
 
     public Boolean login() {
         try {
-            String sql = "SELECT * FROM "+this.tablename+" WHERE username = '" + this.getUserName() + "' AND password = '" + this.getPassword() + "'";
-            System.out.println(sql);
+            String sql = "SELECT * FROM " + this.tablename + " WHERE username = '" + this.getUserName() + "' AND password = '" + this.getPassword() + "'";
             mysql.preparedStatement = mysql.connection.prepareStatement(sql);
             mysql.resultSet = mysql.preparedStatement.executeQuery();
 
             if (mysql.resultSet.next()) { //if success
                 //check user status
-
                 if (mysql.resultSet.getString("status").equals("1")) {
                     //active account
                     if (mysql.resultSet.getString("roles").equals("Admin")) {
@@ -108,12 +103,10 @@ public class Users {
 
     public ResultSet getLoginId(String log_id) {
         String sql = "SELECT * FROM `" + this.tablename + "` WHERE login_id = '" + log_id + "' ";
-        System.out.println(sql);
         return mysql.getDataBySql(sql);
     }
 
     public Boolean loginsave() {
-
         /**
          * If Wedding Details id is not null it means update using wedding
          * Details id
@@ -142,9 +135,4 @@ public class Users {
         }
         return null;
     }
-
-    public void setStatus(Payment aThis, boolean selected) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

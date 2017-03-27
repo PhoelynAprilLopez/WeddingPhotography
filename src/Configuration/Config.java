@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package Configuration;
-
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import javax.swing.JOptionPane;
-
 /**
  *
  * @author LopezLaps

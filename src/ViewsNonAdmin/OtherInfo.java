@@ -7,8 +7,6 @@ package ViewsNonAdmin;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import ViewsNonAdmin.WeddingDetails;
-
 /**
  *
  * @author LopezLaps
@@ -65,8 +63,10 @@ public class OtherInfo extends javax.swing.JFrame {
         jLabel1.setText("OTHER INFORMATION");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Wedding Photography Booking");
         setUndecorated(true);
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -161,6 +161,11 @@ public class OtherInfo extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -179,7 +184,6 @@ public class OtherInfo extends javax.swing.JFrame {
     }
 
     private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-
         if (this.getOtherInformation()) {
             ViewsNonAdmin.WeddingDetails.weddingDetails = null;
             new Views.Home().setVisible(true);
@@ -202,6 +206,11 @@ public class OtherInfo extends javax.swing.JFrame {
         ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
         login.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        Views.Tac tac = new Views.Tac(this, true);
+        tac.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,6 +241,7 @@ public class OtherInfo extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new OtherInfo().setVisible(true);
             }

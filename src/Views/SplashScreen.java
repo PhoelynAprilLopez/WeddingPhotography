@@ -4,16 +4,9 @@
  * and open the template in the editor.
  */
 package Views;
-
-import DataObjects.WeddingDetails;
-import DataObjects.WeddingInfo;
-import Database.MySql;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import static java.lang.Thread.sleep;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -98,6 +91,7 @@ public final class SplashScreen extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         setForeground(new java.awt.Color(255, 0, 153));
         setUndecorated(true);
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loadingBar.setForeground(new java.awt.Color(255, 0, 153));
@@ -113,7 +107,7 @@ public final class SplashScreen extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bw.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 320));
 
-        setSize(new java.awt.Dimension(410, 300));
+        setSize(new java.awt.Dimension(410, 308));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,32 +126,12 @@ public final class SplashScreen extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new SplashScreen().setVisible(true);
 
             }
         });
-
-        
-//        WeddingDetails weddingDetails = new WeddingDetails();
-//        weddingDetails.setBookerName("Jameshwart Lopez");
-//        weddingDetails.setFullnameOfTheBride("Apriln Capillanes");
-//        weddingDetails.setFullnameOfTheGroom("Jameshwart Lopez");
-//        weddingDetails.setAddress("Pulpogan Consolacion Cebu");
-//        weddingDetails.setCity("Cebu City");
-//        weddingDetails.setContactNo("09336888305");
-//        weddingDetails.setGettingReadyTime("11:30 AM");
-//        weddingDetails.setGettingReadyLocation("Consolacion SM");
-//        weddingDetails.setCeremonyTime("12:30");
-//        weddingDetails.setCeremonyLocation("San Narciso Parish");
-//        weddingDetails.setPhotoshootTime("1:00");
-//        weddingDetails.setPhotoshootLocation("at church");
-//        weddingDetails.setReceptionTime("1:30");
-//        weddingDetails.setReceptionLocation("Orosia");
-//        weddingDetails.setNumberOfGuest(100);
-//        weddingDetails.setSpecialRequestNotes("Thank You");
-//        WeddingDetails.save(weddingDetails);
-//        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ViewsNonAdmin;
+
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
@@ -21,13 +22,13 @@ public class PhotoCoverage extends javax.swing.JFrame {
         Themes.Theme.setIcon(this);
         initComponents();
     }
- 
+
     public void frameClose() {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-    
+
     private DataObjects.WeddingDetails getPhotoCoverage() {
         DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
 
@@ -104,8 +105,10 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Wedding Photography Booking");
         setUndecorated(true);
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -284,6 +287,11 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
         jMenu4.setText("Terms and condition");
         jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -291,9 +299,8 @@ public class PhotoCoverage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(885, 626));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
 
+    private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
         this.getPhotoCoverage();
         new ViewsNonAdmin.OtherInfo().setVisible(true);
         dispose();
@@ -311,18 +318,19 @@ public class PhotoCoverage extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
         if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
-            //ViewsNonAdmin.WeddingDetails.weddingDetails.logData();
             this.setPhotoCoverageFormDetails();
         }
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenu5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseEntered
-         //ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
-        //login.setVisible(true);
         new ViewsAdmin.Login().setVisible(true);
     }//GEN-LAST:event_jMenu5MouseEntered
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        Views.Tac tac = new Views.Tac(this, true);
+        tac.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -353,6 +361,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new PhotoCoverage().setVisible(true);
             }

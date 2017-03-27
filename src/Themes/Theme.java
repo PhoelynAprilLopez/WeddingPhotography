@@ -33,7 +33,7 @@ public class Theme {
     
     public static void render(String themeName) {
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {             
                 if (themeName.equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -51,6 +51,6 @@ public class Theme {
     }
     
     public static void setIcon(JFrame jframe){
-        jframe.setIconImage(Toolkit.getDefaultToolkit().getImage(jframe.getClass().getResource("/Images/icon.png")));
+        jframe.setIconImage(Toolkit.getDefaultToolkit().getImage(jframe.getClass().getResource("/Images/pc2.png")));
     }
 }

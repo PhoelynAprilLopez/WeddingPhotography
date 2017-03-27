@@ -4,16 +4,9 @@
  * and open the template in the editor.
  */
 package ViewsAdmin;
-
-import Database.MySql;
-import ViewsNonAdmin.WeddingDetails;
 import java.awt.event.KeyEvent;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -25,7 +18,7 @@ import java.awt.event.WindowEvent;
  *
  * @author LopezLaps
  */
-public class Reports extends javax.swing.JFrame {
+public final class Reports extends javax.swing.JFrame {
 
     public PreparedStatement preparedStatement = null;
     public ResultSet resultSet = null;
@@ -108,7 +101,9 @@ public class Reports extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Wedding Photography Booking");
         setUndecorated(true);
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table_user.setModel(new javax.swing.table.DefaultTableModel(
@@ -463,8 +458,6 @@ public class Reports extends javax.swing.JFrame {
 
         wedDetails.setNumberOfGuest(txt_roinumberofguest.getText());
         wedDetails.setSpecialRequestNotes(ta_roispecialrequestnotes.getText());
-
-        //DataObjects.WeddingDetails.save(wedDetails);
         return wedDetails;
     }
 
@@ -557,7 +550,6 @@ public class Reports extends javax.swing.JFrame {
         int row = table_user.getSelectedRow();
         this.weddingDetailsId = (table_user.getModel().getValueAt(row, 0).toString());
 
-        System.out.println(this.weddingDetailsId);
         DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
         wedDetails.getWeddingDetailsById(this.weddingDetailsId);
         /**
@@ -592,7 +584,6 @@ public class Reports extends javax.swing.JFrame {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.searchAndShowDataToWeddingBookTable();
         }
-        System.out.println("Key code being press by the user :>" + evt.getKeyCode());
         this.searchAndShowDataToWeddingBookTable();
     }//GEN-LAST:event_txt_searchKeyReleased
 
@@ -602,13 +593,11 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu3MouseClicked
 
     private void btn_fullypaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fullypaidActionPerformed
-        // TODO add your handling code here:
         int row = table_user.getSelectedRow();
         Integer id = Integer.parseInt(table_user.getModel().getValueAt(row, 0).toString());
         if (id <= 0) {
             JOptionPane.showMessageDialog(this, Constants.StringError.SElECT_BOOKING_ENTRY);
         } else {
-
             DataObjects.WeddingDetails wedDetails = new DataObjects.WeddingDetails();
             wedDetails.setId(id);
             wedDetails.setStatus(Constants.WeddingDetailsStatus.FULLY_PAID);
@@ -652,6 +641,7 @@ public class Reports extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Reports().setVisible(true);
 
