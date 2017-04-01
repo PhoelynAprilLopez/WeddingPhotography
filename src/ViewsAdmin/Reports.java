@@ -13,6 +13,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import net.proteanit.sql.DbUtils;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.text.MessageFormat;
+import javax.swing.JTable;
 
 /**
  *
@@ -33,6 +35,11 @@ public final class Reports extends javax.swing.JFrame {
         initComponents();
         Themes.Theme.setIcon(this);
         this.showDataToWeddingBookTable();
+        setJMenuBar(Themes.Theme.setUpMenu(this));
+        
+        String className = this.getClass().getName();
+        System.out.print(className);
+        
     }
 
     /**
@@ -45,7 +52,11 @@ public final class Reports extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_user = new javax.swing.JTable();
+        table_user = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         jLabel1 = new javax.swing.JLabel();
         txt_search = new javax.swing.JTextField();
         btn_go = new javax.swing.JButton();
@@ -97,13 +108,12 @@ public final class Reports extends javax.swing.JFrame {
         btn_update = new javax.swing.JButton();
         btn_deposit = new javax.swing.JButton();
         btn_fullypaid = new javax.swing.JButton();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wedding Photography Booking");
         setUndecorated(true);
-        setType(java.awt.Window.Type.UTILITY);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table_user.setModel(new javax.swing.table.DefaultTableModel(
@@ -374,21 +384,13 @@ public final class Reports extends javax.swing.JFrame {
         });
         getContentPane().add(btn_fullypaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 120, 30));
 
-        jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jMenu3.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu3.setBorder(null);
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
-        jMenu3.setText("Home");
-        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu3MouseClicked(evt);
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-        jMenuBar2.add(jMenu3);
-
-        setJMenuBar(jMenuBar2);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
         setSize(new java.awt.Dimension(1274, 667));
         setLocationRelativeTo(null);
@@ -587,11 +589,6 @@ public final class Reports extends javax.swing.JFrame {
         this.searchAndShowDataToWeddingBookTable();
     }//GEN-LAST:event_txt_searchKeyReleased
 
-    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
-        new Views.Home().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu3MouseClicked
-
     private void btn_fullypaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_fullypaidActionPerformed
         int row = table_user.getSelectedRow();
         Integer id = Integer.parseInt(table_user.getModel().getValueAt(row, 0).toString());
@@ -611,6 +608,18 @@ public final class Reports extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btn_fullypaidActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        MessageFormat header = new MessageFormat("Booking List");
+        MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+
+        try{
+            table_user.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        }catch (java.awt.print.PrinterException e) {
+            System.err.format("Cannot Print %s%n", e.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -654,6 +663,7 @@ public final class Reports extends javax.swing.JFrame {
     private javax.swing.JButton btn_fullypaid;
     private javax.swing.JButton btn_go;
     private javax.swing.JButton btn_update;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -679,8 +689,6 @@ public final class Reports extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

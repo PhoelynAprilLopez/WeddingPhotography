@@ -7,6 +7,8 @@ package ViewsNonAdmin;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LopezLaps
@@ -20,6 +22,7 @@ public class OtherInfo extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(OtherInfo.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
+        setJMenuBar(Themes.Theme.setUpMenu(this));
     }
 
     public void frameClose() {
@@ -51,10 +54,6 @@ public class OtherInfo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -66,7 +65,6 @@ public class OtherInfo extends javax.swing.JFrame {
         setTitle("Wedding Photography Booking");
         setUndecorated(true);
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -134,42 +132,6 @@ public class OtherInfo extends javax.swing.JFrame {
         jLabel5.setText("OTHER INFORMATION");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
-        jMenu2.setBorder(null);
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
-        jMenu2.setText("HOME");
-        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu2);
-
-        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(null);
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu5.setText("Admin");
-        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu5);
-
-        jMenu4.setBorder(null);
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms and condition");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu4);
-
-        setJMenuBar(jMenuBar1);
-
         setSize(new java.awt.Dimension(870, 621));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -183,34 +145,31 @@ public class OtherInfo extends javax.swing.JFrame {
         return wedDetails.save();
     }
 
-    private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
-        if (this.getOtherInformation()) {
-            ViewsNonAdmin.WeddingDetails.weddingDetails = null;
-            new Views.Home().setVisible(true);
-            dispose();
-        }
+    private Boolean shouldContinue() {
 
+        if ("".equals(txt_numberofguest.getText())) {
+            JOptionPane.showMessageDialog(this, "Number of guest is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(ta_specialrequestnotes.getText())) {
+            JOptionPane.showMessageDialog(this, "Notes is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+    private void btn_oidoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_oidoneActionPerformed
+        if (this.shouldContinue()) {
+            if (this.getOtherInformation()) {
+                ViewsNonAdmin.WeddingDetails.weddingDetails = null;
+                new Views.Home().setVisible(true);
+                dispose();
+            }
+        }
     }//GEN-LAST:event_btn_oidoneActionPerformed
 
     private void lbl_photocoverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_photocoverageMouseClicked
         new ViewsNonAdmin.PhotoCoverage().setVisible(true);
         dispose();
     }//GEN-LAST:event_lbl_photocoverageMouseClicked
-
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
-        new Views.Home().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu2MouseClicked
-
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
-        login.setVisible(true);
-    }//GEN-LAST:event_jMenu5MouseClicked
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        Views.Tac tac = new Views.Tac(this, true);
-        tac.setVisible(true);
-    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -256,10 +215,6 @@ public class OtherInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

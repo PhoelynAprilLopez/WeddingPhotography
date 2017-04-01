@@ -7,6 +7,7 @@ package ViewsNonAdmin;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +22,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(PhotoCoverage.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
+        setJMenuBar(Themes.Theme.setUpMenu(this));
     }
 
     public void frameClose() {
@@ -49,7 +51,7 @@ public class PhotoCoverage extends javax.swing.JFrame {
             DataObjects.WeddingDetails wedDetails = ViewsNonAdmin.WeddingDetails.weddingDetails;
 
             this.txt_gettingreadytime.setText(wedDetails.getGettingReadyTime());
-            this.txt_gettingreadylocation.setText(wedDetails.getReceptionLocation());
+            this.txt_gettingreadylocation.setText(wedDetails.getGettingReadyLocation());
 
             this.txt_ceremonytime.setText(wedDetails.getCeremonyTime());
             this.txt_ceremonylocation.setText(wedDetails.getCeremonyLocation());
@@ -99,19 +101,17 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wedding Photography Booking");
         setUndecorated(true);
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -260,50 +260,47 @@ public class PhotoCoverage extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, 10));
 
-        jMenu2.setBorder(null);
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
-        jMenu2.setText("HOME");
-        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu2);
-
-        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(null);
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu5.setText("Admin");
-        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenu5MouseEntered(evt);
-            }
-        });
-        jMenuBar1.add(jMenu5);
-
-        jMenu4.setBorder(null);
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms and condition");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu4);
-
-        setJMenuBar(jMenuBar1);
-
         setSize(new java.awt.Dimension(885, 626));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
+    private Boolean shouldContinue() {
         this.getPhotoCoverage();
-        new ViewsNonAdmin.OtherInfo().setVisible(true);
-        dispose();
+        if ("".equals(txt_gettingreadytime.getText())) {
+            JOptionPane.showMessageDialog(this, "Getting ready time is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_gettingreadylocation.getText())) {
+            JOptionPane.showMessageDialog(this, "Getting ready location is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_ceremonytime.getText())) {
+            JOptionPane.showMessageDialog(this, "Ceremony time is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_ceremonylocation.getText())) {
+            JOptionPane.showMessageDialog(this, "Ceremony location is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_photoshoottime.getText())) {
+            JOptionPane.showMessageDialog(this, "Photoshoot is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_photoshootlocation.getText())) {
+            JOptionPane.showMessageDialog(this, "Photoshoot location is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_receptiontime.getText())) {
+            JOptionPane.showMessageDialog(this, "Reception time is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_receptionlocation.getText())) {
+            JOptionPane.showMessageDialog(this, "Reception location is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        return true;
+    }
+    private void btn_pcnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pcnextActionPerformed
+        if (this.shouldContinue()) {
+
+            this.getPhotoCoverage();
+            new ViewsNonAdmin.OtherInfo().setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btn_pcnextActionPerformed
 
     private void lbl_weddingdetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_weddingdetailsMouseClicked
@@ -312,25 +309,15 @@ public class PhotoCoverage extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_lbl_weddingdetailsMouseClicked
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
-        new Views.Home().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu2MouseClicked
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
             this.setPhotoCoverageFormDetails();
         }
-    }//GEN-LAST:event_formWindowActivated
-
-    private void jMenu5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseEntered
-        new ViewsAdmin.Login().setVisible(true);
-    }//GEN-LAST:event_jMenu5MouseEntered
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        Views.Tac tac = new Views.Tac(this, true);
-        tac.setVisible(true);
-    }//GEN-LAST:event_jMenu4MouseClicked
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -385,10 +372,6 @@ public class PhotoCoverage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

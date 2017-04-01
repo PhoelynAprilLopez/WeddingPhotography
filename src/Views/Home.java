@@ -20,6 +20,7 @@ public class Home extends javax.swing.JFrame {
         Themes.Theme.renderAluminium(Home.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
+        setJMenuBar(Themes.Theme.setUpMenu(this));
     }
 
     public void frameClose() {
@@ -48,10 +49,6 @@ public class Home extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -61,7 +58,7 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Wedding Photography Booking");
         setBackground(new java.awt.Color(255, 204, 255));
         setUndecorated(true);
@@ -103,40 +100,6 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setText("Sample Picture");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 340, 60));
 
-        jMenuBar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jMenu3.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu3.setBorder(null);
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
-        jMenu3.setText("Home");
-        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu3);
-
-        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(null);
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu5.setText("Admin");
-        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu5);
-
-        jMenu4.setBorder(null);
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms And Condition");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu4);
-
-        setJMenuBar(jMenuBar2);
-
         setSize(new java.awt.Dimension(885, 629));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -145,16 +108,6 @@ public class Home extends javax.swing.JFrame {
         new ViewsNonAdmin.WeddingDetails().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnBookNowActionPerformed
-
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
-        login.setVisible(true);
-    }//GEN-LAST:event_jMenu5MouseClicked
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-       Views.Tac tac = new Views.Tac(this, true);
-        tac.setVisible(true);
-    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -185,11 +138,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

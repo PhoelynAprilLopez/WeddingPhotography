@@ -7,6 +7,8 @@ package ViewsNonAdmin;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,11 +21,11 @@ public class WeddingDetails extends javax.swing.JFrame {
     /**
      * Creates new form WeddingDetails
      */
-
     public WeddingDetails() {
         Themes.Theme.renderAluminium(WeddingDetails.class.getName());
         Themes.Theme.setIcon(this);
         initComponents();
+        setJMenuBar(Themes.Theme.setUpMenu(this));
     }
 
     public void frameClose() {
@@ -64,17 +66,12 @@ public class WeddingDetails extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wedding Photography Booking");
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -161,6 +158,11 @@ public class WeddingDetails extends javax.swing.JFrame {
         txt_contactnumber.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_contactnumber.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txt_contactnumber.setPreferredSize(new java.awt.Dimension(5, 18));
+        txt_contactnumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_contactnumberKeyPressed(evt);
+            }
+        });
         jPanel1.add(txt_contactnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 350, 34));
 
         btn_wdnext.setBackground(new java.awt.Color(255, 0, 153));
@@ -190,42 +192,6 @@ public class WeddingDetails extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 300, 10));
-
-        jMenu2.setBorder(null);
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home2.png"))); // NOI18N
-        jMenu2.setText("HOME");
-        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu2);
-
-        jMenu5.setBackground(new java.awt.Color(153, 153, 153));
-        jMenu5.setBorder(null);
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/admin_icon2.png"))); // NOI18N
-        jMenu5.setText("Admin");
-        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu5);
-
-        jMenu4.setBorder(null);
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/terms_and_agreement.png"))); // NOI18N
-        jMenu4.setText("Terms and condition");
-        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu4);
-
-        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(885, 653));
         setLocationRelativeTo(null);
@@ -262,17 +228,44 @@ public class WeddingDetails extends javax.swing.JFrame {
         }
     }
 
+    private Boolean shouldContinue() {
+
+        if ("".equals(txt_bookername.getText())) {
+            JOptionPane.showMessageDialog(this, "Booker name is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_dateofwedding.getText())) {
+            JOptionPane.showMessageDialog(this, "Date of Wedding is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_fullnameofbride.getText())) {
+            JOptionPane.showMessageDialog(this, "Full name of Bride is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_fullnameofgroom.getText())) {
+            JOptionPane.showMessageDialog(this, "Full name of Groom is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_address.getText())) {
+            JOptionPane.showMessageDialog(this, "Address is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_city.getText())) {
+            JOptionPane.showMessageDialog(this, "City is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else if ("".equals(txt_contactnumber.getText())) {
+            JOptionPane.showMessageDialog(this, "Contact Number is empty", "Message", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        return true;
+    }
     private void btn_wdnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_wdnextActionPerformed
-        this.getWeddingDetails();
-        new ViewsNonAdmin.PhotoCoverage().setVisible(true);
-        dispose();
+
+        if (this.shouldContinue()) {
+
+            this.getWeddingDetails();
+            new ViewsNonAdmin.PhotoCoverage().setVisible(true);
+            dispose();
+        }
+
 
     }//GEN-LAST:event_btn_wdnextActionPerformed
-
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
-        new Views.Home().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu2MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         if (ViewsNonAdmin.WeddingDetails.weddingDetails != null) {
@@ -281,15 +274,13 @@ public class WeddingDetails extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowActivated
 
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        ViewsAdmin.Login login = new ViewsAdmin.Login(this, true);
-        login.setVisible(true);
-    }//GEN-LAST:event_jMenu5MouseClicked
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        Views.Tac tac = new Views.Tac(this, true);
-        tac.setVisible(true);
-    }//GEN-LAST:event_jMenu4MouseClicked
+    private void txt_contactnumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contactnumberKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.getWeddingDetails();
+            new ViewsNonAdmin.PhotoCoverage().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_txt_contactnumberKeyPressed
 
     /**
      * @param args the command line arguments
@@ -326,10 +317,6 @@ public class WeddingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ViewsAdmin;
+
 import java.awt.event.KeyEvent;
 
 /**
@@ -13,8 +14,10 @@ import java.awt.event.KeyEvent;
 public class Login extends javax.swing.JDialog {
 
     private java.awt.Frame parentFrame = null;
+
     /**
      * Creates new form NewJDialog
+     *
      * @param parent
      * @param modal
      */
@@ -104,27 +107,27 @@ public class Login extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void userLogin(){
+    private void userLogin() {
         DataObjects.Users user = new DataObjects.Users();
         user.setUserName(this.txt_username.getText());
         user.setPassword(this.txt_password.getText());
-    if (user.login() == true) {
+        if (user.login() == true) {
             new ViewsAdmin.Reports().setVisible(true);
+          
             this.parentFrame.dispose();
             this.dispose();
         } else {
             this.lbl_message.setText("Invalid username or password");
         }
     }
-    
+
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         this.userLogin();
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void txt_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usernameKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.userLogin();           
+            this.userLogin();
         }
     }//GEN-LAST:event_txt_usernameKeyPressed
 
